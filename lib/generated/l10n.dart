@@ -49,6 +49,206 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Al-Menbar`
+  String get title {
+    return Intl.message(
+      'Al-Menbar',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login_page {
+    return Intl.message(
+      'Login',
+      name: 'login_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register_page {
+    return Intl.message(
+      'Register',
+      name: 'register_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `eEmail`
+  String get email_subtitle {
+    return Intl.message(
+      'eEmail',
+      name: 'email_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password_subtitle {
+    return Intl.message(
+      'Password',
+      name: 'password_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm your password`
+  String get confirm_password_subtitle {
+    return Intl.message(
+      'Confirm your password',
+      name: 'confirm_password_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile number`
+  String get mobile_number_subtitle {
+    return Intl.message(
+      'Mobile number',
+      name: 'mobile_number_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get email_hint {
+    return Intl.message(
+      'Enter your email',
+      name: 'email_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get password_hint {
+    return Intl.message(
+      'Enter your password',
+      name: 'password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ُEnter your password again`
+  String get confirm_password_hint {
+    return Intl.message(
+      'ُEnter your password again',
+      name: 'confirm_password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your mobile number`
+  String get mobile_number_hint {
+    return Intl.message(
+      'Enter your mobile number',
+      name: 'mobile_number_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login_button {
+    return Intl.message(
+      'Login',
+      name: 'login_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register_button {
+    return Intl.message(
+      'Register',
+      name: 'register_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or login with`
+  String get or {
+    return Intl.message(
+      'or login with',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? `
+  String get no_account {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'no_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get have_account {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register now`
+  String get to_sign_up {
+    return Intl.message(
+      'Register now',
+      name: 'to_sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login now`
+  String get to_sign_in {
+    return Intl.message(
+      'Login now',
+      name: 'to_sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First educational application for Islamic Studies using AI`
+  String get description {
+    return Intl.message(
+      'First educational application for Islamic Studies using AI',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +257,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

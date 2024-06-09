@@ -1,0 +1,22 @@
+{
+    "title" : "المنبر",
+    "login_page" : "تسجيل الدخول",
+    "register_page" : "إنشاء حساب",
+    "email_subtitle" : "البريد الالكتروني",
+    "password_subtitle" : "كلمة المرور",
+    "confirm_password_subtitle" : "تأكيد كلمة المرور",
+    "mobile_number_subtitle" : "رقم الجوال",
+    "email_hint" : "أدخل بريدك الإلكتروني",
+    "password_hint" : "أدخل كلمة المرور",
+    "confirm_password_hint" : "أدخل كلمة المرور مرة أخرى",
+    "mobile_number_hint" : "أدخل رقم جوالك",
+    "forgot_password" : "نسيت كلمة المرور؟",
+    "login_button" : "تسجيل الدخول",
+    "register_button" : "إنشاء حساب جديد",
+    "or" : "أو باستخدام",
+    "no_account" : " ليس لديك حساب؟",
+    "have_account" : "لديك حساب بالفعل؟",
+    "to_sign_up" : "إنشاء حساب جديد",
+    "to_sign_in" : "تسجيل الدخول",
+    "description": "التطبيق التعليمي الأول لدراسة العلـــوم الشرعيـــة باستخـــدام الذكـــاء الاصطناعــي"
+}

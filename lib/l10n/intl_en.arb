@@ -1,1 +1,22 @@
-{}
+{
+    "title" : "Al-Menbar",
+    "login_page" : "Login",
+    "register_page" : "Register",
+    "email_subtitle" : "eEmail",
+    "password_subtitle" : "Password",
+    "confirm_password_subtitle" : "Confirm your password",
+    "mobile_number_subtitle" : "Mobile number",
+    "email_hint" : "Enter your email",
+    "password_hint" : "Enter your password",
+    "confirm_password_hint" : "ُEnter your password again",
+    "mobile_number_hint" : "Enter your mobile number",
+    "forgot_password" : "Forgot password?",
+    "login_button" : "Login",
+    "register_button" : "Register",
+    "or": "or login with",
+    "no_account": "Don't have an account? ",
+    "have_account": "Already have an account? ",
+    "to_sign_up": "Register now",
+    "to_sign_in": "Login now",
+    "description": "First educational application for Islamic Studies using AI"
+}

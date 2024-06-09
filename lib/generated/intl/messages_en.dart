@@ -21,5 +21,35 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "confirm_password_hint":
+            MessageLookupByLibrary.simpleMessage("ُEnter your password again"),
+        "confirm_password_subtitle":
+            MessageLookupByLibrary.simpleMessage("Confirm your password"),
+        "description": MessageLookupByLibrary.simpleMessage(
+            "First educational application for Islamic Studies using AI"),
+        "email_hint": MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "email_subtitle": MessageLookupByLibrary.simpleMessage("eEmail"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
+        "have_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "login_button": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_page": MessageLookupByLibrary.simpleMessage("Login"),
+        "mobile_number_hint":
+            MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
+        "mobile_number_subtitle":
+            MessageLookupByLibrary.simpleMessage("Mobile number"),
+        "no_account":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account? "),
+        "or": MessageLookupByLibrary.simpleMessage("or login with"),
+        "password_hint":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "password_subtitle": MessageLookupByLibrary.simpleMessage("Password"),
+        "register_button": MessageLookupByLibrary.simpleMessage("Register"),
+        "register_page": MessageLookupByLibrary.simpleMessage("Register"),
+        "title": MessageLookupByLibrary.simpleMessage("Al-Menbar"),
+        "to_sign_in": MessageLookupByLibrary.simpleMessage("Login now"),
+        "to_sign_up": MessageLookupByLibrary.simpleMessage("Register now")
+      };
 }
