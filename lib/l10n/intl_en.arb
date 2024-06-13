@@ -18,5 +18,21 @@
     "have_account": "Already have an account? ",
     "to_sign_up": "Register now",
     "to_sign_in": "Login now",
-    "description": "First educational application for Islamic Studies using AI"
+    "description": "First educational application for Islamic Studies using AI",
+    "home_button": "Home",
+    "profile_button": "My Profile",
+    "support_button": "Support",
+    "learn_button": "Learn",
+    "library_button": "Library",
+    "tafsir_name" : "Interpretation",
+    "fiqh_name" : "Jurisprudence",
+    "aqidah_name" : "Faith",
+    "hadith_name" : "Hadith",
+    "tafsir_book" : "Tayseer Al-Kareem Al-Rahman",
+    "fiqh_book" : "Al-Fiqh Al-Moyassar",
+    "aqidah_book" : "Osool Al-Iman",
+    "hadith_book" : "Al-Arba'oon Al-Nawaweya",
+    "tafsir_sheikh" : "AbdelRazzaq Al-Badr",
+    "aqidah_sheikh" : "Muhammad Ismail Al-Muqaddem",
+    "hadith_sheikh" : "Saleh Aal Al-Sheikh"
 }

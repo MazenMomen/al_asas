@@ -3,15 +3,12 @@ import 'package:al_asas/widgets/mobile_number_field.dart';
 import 'package:al_asas/widgets/sign_up_button.dart';
 import 'package:al_asas/widgets/to_login_text_button.dart';
 import 'package:flutter/material.dart';
-
 import '../generated/l10n.dart';
 import '../utils/app_styles.dart';
 import 'email_field.dart';
 import 'google_login_button.dart';
-import 'login_button.dart';
 import 'password_field.dart';
 import 'text_in_divider.dart';
-import 'to_sign_up_text_button.dart';
 
 class SignUpContent extends StatelessWidget {
   const SignUpContent({

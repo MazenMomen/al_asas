@@ -249,6 +249,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home_button {
+    return Intl.message(
+      'Home',
+      name: 'home_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Profile`
+  String get profile_button {
+    return Intl.message(
+      'My Profile',
+      name: 'profile_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support`
+  String get support_button {
+    return Intl.message(
+      'Support',
+      name: 'support_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Learn`
+  String get learn_button {
+    return Intl.message(
+      'Learn',
+      name: 'learn_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Library`
+  String get library_button {
+    return Intl.message(
+      'Library',
+      name: 'library_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interpretation`
+  String get tafsir_name {
+    return Intl.message(
+      'Interpretation',
+      name: 'tafsir_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Jurisprudence`
+  String get fiqh_name {
+    return Intl.message(
+      'Jurisprudence',
+      name: 'fiqh_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Faith`
+  String get aqidah_name {
+    return Intl.message(
+      'Faith',
+      name: 'aqidah_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hadith`
+  String get hadith_name {
+    return Intl.message(
+      'Hadith',
+      name: 'hadith_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tayseer Al-Kareem Al-Rahman`
+  String get tafsir_book {
+    return Intl.message(
+      'Tayseer Al-Kareem Al-Rahman',
+      name: 'tafsir_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Al-Fiqh Al-Moyassar`
+  String get fiqh_book {
+    return Intl.message(
+      'Al-Fiqh Al-Moyassar',
+      name: 'fiqh_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Osool Al-Iman`
+  String get aqidah_book {
+    return Intl.message(
+      'Osool Al-Iman',
+      name: 'aqidah_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Al-Arba'oon Al-Nawaweya`
+  String get hadith_book {
+    return Intl.message(
+      'Al-Arba\'oon Al-Nawaweya',
+      name: 'hadith_book',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AbdelRazzaq Al-Badr`
+  String get tafsir_sheikh {
+    return Intl.message(
+      'AbdelRazzaq Al-Badr',
+      name: 'tafsir_sheikh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Muhammad Ismail Al-Muqaddem`
+  String get aqidah_sheikh {
+    return Intl.message(
+      'Muhammad Ismail Al-Muqaddem',
+      name: 'aqidah_sheikh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saleh Aal Al-Sheikh`
+  String get hadith_sheikh {
+    return Intl.message(
+      'Saleh Aal Al-Sheikh',
+      name: 'hadith_sheikh',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -44,4 +44,22 @@ abstract class AppStyles {
     fontSize: 7.64,
     fontWeight: FontWeight.w400,
   );
+  static const TextStyle regular57_68 = TextStyle(
+    color: Color(0xFFFFFFFF),
+    fontSize: 57.68,
+    fontFamily: 'DecoType Thuluth II',
+    fontWeight: FontWeight.w400,
+  );
+  static const TextStyle black16 = TextStyle(
+    color: Color(0xFFFFFFFF),
+    fontSize: 16,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w900,
+  );
+  static const TextStyle black10 = TextStyle(
+    color: Color(0xFFFFFFFF),
+    fontSize: 10,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w900,
+  );
 }

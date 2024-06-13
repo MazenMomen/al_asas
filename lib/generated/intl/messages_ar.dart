@@ -22,6 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aqidah_book": MessageLookupByLibrary.simpleMessage(
+            "أصول الإيمان في ضوء الكتاب والسنة"),
+        "aqidah_name": MessageLookupByLibrary.simpleMessage("العقيدة"),
+        "aqidah_sheikh": MessageLookupByLibrary.simpleMessage(
+            "بشرح الشيخ محمد إسماعيل المقدم"),
         "confirm_password_hint":
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور مرة أخرى"),
         "confirm_password_subtitle":
@@ -32,10 +37,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "email_subtitle":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "fiqh_book": MessageLookupByLibrary.simpleMessage(
+            "الفقه الميسر في ضوء الكتاب والسنة"),
+        "fiqh_name": MessageLookupByLibrary.simpleMessage("الفقه"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "hadith_book": MessageLookupByLibrary.simpleMessage("الأربعون النووية"),
+        "hadith_name": MessageLookupByLibrary.simpleMessage("الحديث"),
+        "hadith_sheikh":
+            MessageLookupByLibrary.simpleMessage("بشرح الشيخ صالح آل الشيخ"),
         "have_account":
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
+        "home_button": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "learn_button": MessageLookupByLibrary.simpleMessage("تعلّم"),
+        "library_button": MessageLookupByLibrary.simpleMessage("المكتبة"),
         "login_button": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "login_page": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "mobile_number_hint":
@@ -48,9 +63,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "password_subtitle":
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "profile_button": MessageLookupByLibrary.simpleMessage("حسابي"),
         "register_button":
             MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "register_page": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "support_button": MessageLookupByLibrary.simpleMessage("الدعم"),
+        "tafsir_book": MessageLookupByLibrary.simpleMessage(
+            "تيسير الكريم الرحمن في تفسير كلام المنان"),
+        "tafsir_name": MessageLookupByLibrary.simpleMessage("التفسير"),
+        "tafsir_sheikh":
+            MessageLookupByLibrary.simpleMessage("بشرح الشيخ عبد الرزاق البدر"),
         "title": MessageLookupByLibrary.simpleMessage("المنبر"),
         "to_sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "to_sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد")
