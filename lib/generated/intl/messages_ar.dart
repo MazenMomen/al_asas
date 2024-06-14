@@ -50,6 +50,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟"),
         "home_button": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "learn_button": MessageLookupByLibrary.simpleMessage("تعلّم"),
+        "lecture_tab1": MessageLookupByLibrary.simpleMessage("عن المقرر"),
+        "lecture_tab2": MessageLookupByLibrary.simpleMessage("المحتوى"),
+        "lecture_tab3":
+            MessageLookupByLibrary.simpleMessage("نتائج الاختبارات"),
+        "lecture_tab4": MessageLookupByLibrary.simpleMessage("الأسئلة"),
+        "lecture_title":
+            MessageLookupByLibrary.simpleMessage("التفسير | المحاضرة الأولى"),
         "library_button": MessageLookupByLibrary.simpleMessage("المكتبة"),
         "login_button": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "login_page": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),

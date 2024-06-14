@@ -48,6 +48,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "home_button": MessageLookupByLibrary.simpleMessage("Home"),
         "learn_button": MessageLookupByLibrary.simpleMessage("Learn"),
+        "lecture_tab1": MessageLookupByLibrary.simpleMessage("About"),
+        "lecture_tab2": MessageLookupByLibrary.simpleMessage("Content"),
+        "lecture_tab3": MessageLookupByLibrary.simpleMessage("Tests Results"),
+        "lecture_tab4": MessageLookupByLibrary.simpleMessage("Questions"),
+        "lecture_title":
+            MessageLookupByLibrary.simpleMessage("Interpretation | Lecture 1"),
         "library_button": MessageLookupByLibrary.simpleMessage("Library"),
         "login_button": MessageLookupByLibrary.simpleMessage("Login"),
         "login_page": MessageLookupByLibrary.simpleMessage("Login"),

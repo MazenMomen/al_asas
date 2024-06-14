@@ -1,3 +1,4 @@
+import 'package:al_asas/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 class GoogleLoginButton extends StatelessWidget {
@@ -20,7 +21,7 @@ class GoogleLoginButton extends StatelessWidget {
         ),
       ),
       child: Image.asset(
-        'assets/images/google.png',
+        Assets.imagesGoogle,
         width: MediaQuery.of(context).size.width * 25 / 390,
         height: MediaQuery.of(context).size.height * 25 / 844,
       ),

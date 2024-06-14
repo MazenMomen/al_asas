@@ -409,6 +409,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Interpretation | Lecture 1`
+  String get lecture_title {
+    return Intl.message(
+      'Interpretation | Lecture 1',
+      name: 'lecture_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About`
+  String get lecture_tab1 {
+    return Intl.message(
+      'About',
+      name: 'lecture_tab1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content`
+  String get lecture_tab2 {
+    return Intl.message(
+      'Content',
+      name: 'lecture_tab2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tests Results`
+  String get lecture_tab3 {
+    return Intl.message(
+      'Tests Results',
+      name: 'lecture_tab3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Questions`
+  String get lecture_tab4 {
+    return Intl.message(
+      'Questions',
+      name: 'lecture_tab4',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

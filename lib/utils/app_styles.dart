@@ -13,6 +13,12 @@ abstract class AppStyles {
     fontSize: 10.31,
     fontWeight: FontWeight.w800,
   );
+  static const TextStyle regular10_31 = TextStyle(
+    fontFamily: 'Cairo',
+    color: Color(0xFF2A3E34),
+    fontSize: 10.31,
+    fontWeight: FontWeight.w400,
+  );
 
   static const TextStyle regular13_19 = TextStyle(
     fontFamily: 'Cairo',
