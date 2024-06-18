@@ -39,5 +39,11 @@
     "lecture_tab1":"عن المقرر",
     "lecture_tab2":"المحتوى",
     "lecture_tab3":"نتائج الاختبارات",
-    "lecture_tab4":"الأسئلة"
+    "lecture_tab4":"الأسئلة",
+    "to_essay_exam": "التالي",
+    "submit_exam": "سجل",
+    "alert_dialog_title": "تسليم جميع الإجابات؟",
+    "alert_dialog_content": "هل أنت متأكد أنك تريد تسليم جميع الإجابات الاختيارية والمقالية؟",
+    "alert_dialog_yes": "نعم، متأكد",
+    "alert_dialog_no": "لا، لست متأكدًا"
 }

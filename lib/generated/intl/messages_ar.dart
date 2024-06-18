@@ -22,6 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alert_dialog_content": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد أنك تريد تسليم جميع الإجابات الاختيارية والمقالية؟"),
+        "alert_dialog_no":
+            MessageLookupByLibrary.simpleMessage("لا، لست متأكدًا"),
+        "alert_dialog_title":
+            MessageLookupByLibrary.simpleMessage("تسليم جميع الإجابات؟"),
+        "alert_dialog_yes": MessageLookupByLibrary.simpleMessage("نعم، متأكد"),
         "aqidah_book": MessageLookupByLibrary.simpleMessage(
             "أصول الإيمان في ضوء الكتاب والسنة"),
         "aqidah_name": MessageLookupByLibrary.simpleMessage("العقيدة"),
@@ -74,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_button":
             MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "register_page": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "submit_exam": MessageLookupByLibrary.simpleMessage("سجل"),
         "support_button": MessageLookupByLibrary.simpleMessage("الدعم"),
         "tafsir_book": MessageLookupByLibrary.simpleMessage(
             "تيسير الكريم الرحمن في تفسير كلام المنان"),
@@ -81,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tafsir_sheikh":
             MessageLookupByLibrary.simpleMessage("بشرح الشيخ عبد الرزاق البدر"),
         "title": MessageLookupByLibrary.simpleMessage("المنبر"),
+        "to_essay_exam": MessageLookupByLibrary.simpleMessage("التالي"),
         "to_sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "to_sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد")
       };

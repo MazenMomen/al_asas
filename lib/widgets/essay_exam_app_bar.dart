@@ -13,8 +13,7 @@ class EssayExamAppBar extends StatelessWidget {
       backgroundColor: const Color(0xFFFFFFFF),
       surfaceTintColor: const Color(0xFFFFFFFF),
       floating: true,
-      leading: IconButton(
-        icon: const Icon(Icons.close),
+      leading: BackButton(
         color: const Color(0xFF2A3E34),
         onPressed: () {},
       ),

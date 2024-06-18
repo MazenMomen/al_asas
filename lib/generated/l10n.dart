@@ -459,6 +459,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Next`
+  String get to_essay_exam {
+    return Intl.message(
+      'Next',
+      name: 'to_essay_exam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit_exam {
+    return Intl.message(
+      'Submit',
+      name: 'submit_exam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit All Answers?`
+  String get alert_dialog_title {
+    return Intl.message(
+      'Submit All Answers?',
+      name: 'alert_dialog_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to submit all Multiple Choice & Essay responses?`
+  String get alert_dialog_content {
+    return Intl.message(
+      'Are you sure you want to submit all Multiple Choice & Essay responses?',
+      name: 'alert_dialog_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, I am sure`
+  String get alert_dialog_yes {
+    return Intl.message(
+      'Yes, I am sure',
+      name: 'alert_dialog_yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No, I am not`
+  String get alert_dialog_no {
+    return Intl.message(
+      'No, I am not',
+      name: 'alert_dialog_no',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

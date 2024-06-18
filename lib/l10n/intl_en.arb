@@ -39,5 +39,11 @@
     "lecture_tab1": "About",
     "lecture_tab2": "Content",
     "lecture_tab3": "Tests Results",
-    "lecture_tab4": "Questions"
+    "lecture_tab4": "Questions",
+    "to_essay_exam": "Next",
+    "submit_exam": "Submit",
+    "alert_dialog_title": "Submit All Answers?",
+    "alert_dialog_content": "Are you sure you want to submit all Multiple Choice & Essay responses?",
+    "alert_dialog_yes": "Yes, I am sure",
+    "alert_dialog_no": "No, I am not"
 }

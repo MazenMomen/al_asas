@@ -34,8 +34,8 @@ class EssayQuestions extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 10 / 844),
-              child: TextFormField(
-                decoration: const InputDecoration(
+              child: const TextField(
+                decoration: InputDecoration(
                   hintText: 'أدخل الإجابة هنا',
                   hintStyle: AppStyles.regular10_31,
                   enabledBorder: OutlineInputBorder(

@@ -22,6 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alert_dialog_content": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to submit all Multiple Choice & Essay responses?"),
+        "alert_dialog_no": MessageLookupByLibrary.simpleMessage("No, I am not"),
+        "alert_dialog_title":
+            MessageLookupByLibrary.simpleMessage("Submit All Answers?"),
+        "alert_dialog_yes":
+            MessageLookupByLibrary.simpleMessage("Yes, I am sure"),
         "aqidah_book": MessageLookupByLibrary.simpleMessage("Osool Al-Iman"),
         "aqidah_name": MessageLookupByLibrary.simpleMessage("Faith"),
         "aqidah_sheikh":
@@ -70,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile_button": MessageLookupByLibrary.simpleMessage("My Profile"),
         "register_button": MessageLookupByLibrary.simpleMessage("Register"),
         "register_page": MessageLookupByLibrary.simpleMessage("Register"),
+        "submit_exam": MessageLookupByLibrary.simpleMessage("Submit"),
         "support_button": MessageLookupByLibrary.simpleMessage("Support"),
         "tafsir_book":
             MessageLookupByLibrary.simpleMessage("Tayseer Al-Kareem Al-Rahman"),
@@ -77,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tafsir_sheikh":
             MessageLookupByLibrary.simpleMessage("AbdelRazzaq Al-Badr"),
         "title": MessageLookupByLibrary.simpleMessage("Al-Menbar"),
+        "to_essay_exam": MessageLookupByLibrary.simpleMessage("Next"),
         "to_sign_in": MessageLookupByLibrary.simpleMessage("Login now"),
         "to_sign_up": MessageLookupByLibrary.simpleMessage("Register now")
       };
