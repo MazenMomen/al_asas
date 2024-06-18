@@ -31,25 +31,26 @@ class LearnScreen extends StatelessWidget {
     ];
 
     return Scaffold(
+        backgroundColor: const Color(0xFFFFFFFF),
         body: SafeArea(
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          mainAxisExtent: (MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).viewPadding.top -
-                  MediaQuery.of(context).size.height * 60 / 844 -
-                  MediaQuery.of(context).size.height * 20 / 844) /
-              2,
-          maxCrossAxisExtent: MediaQuery.of(context).size.width * 195 / 390,
-        ),
-        itemBuilder: (context, index) {
-          return LearnGridCard(
-            subjectName: cardData[index]['subject name']!,
-            bookName: cardData[index]['book name']!,
-            sheikhName: cardData[index]['sheikh name']!,
-          );
-        },
-        itemCount: 4,
-      ),
-    ));
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              mainAxisExtent: (MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).viewPadding.top -
+                      MediaQuery.of(context).size.height * 60 / 844 -
+                      MediaQuery.of(context).size.height * 20 / 844) /
+                  2,
+              maxCrossAxisExtent: MediaQuery.of(context).size.width * 195 / 390,
+            ),
+            itemBuilder: (context, index) {
+              return LearnGridCard(
+                subjectName: cardData[index]['subject name']!,
+                bookName: cardData[index]['book name']!,
+                sheikhName: cardData[index]['sheikh name']!,
+              );
+            },
+            itemCount: 4,
+          ),
+        ));
   }
 }

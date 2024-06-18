@@ -1,3 +1,5 @@
+import 'package:al_asas/screens/essay_exam_screen.dart';
+import 'package:al_asas/screens/mcq_exam_screen.dart';
 import 'package:al_asas/screens/learn_screen.dart';
 import 'package:al_asas/screens/login_screen.dart';
 import 'package:al_asas/screens/watch_lecture_screen.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2A3E34)),
         useMaterial3: true,
       ),
-      home: const WatchLectureScreen(),
+      home: const EssayExamScreen(),
     );
   }
 }

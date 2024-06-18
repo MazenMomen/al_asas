@@ -29,8 +29,8 @@ abstract class AppStyles {
   static const TextStyle regular13_5 = TextStyle(
     fontFamily: 'Cairo',
     color: Color(0xFFFFFFFF),
-    fontSize: 13.19,
-    // fontWeight: FontWeight.w400,
+    fontSize: 13.5,
+    fontWeight: FontWeight.w400,
   );
 
   static const TextStyle regular49_41 = TextStyle(
@@ -67,5 +67,23 @@ abstract class AppStyles {
     fontSize: 10,
     fontFamily: 'Cairo',
     fontWeight: FontWeight.w900,
+  );
+  static const TextStyle bold12_51 = TextStyle(
+    color: Color(0xFF2A3E34),
+    fontSize: 12.51,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle semiBold11_9 = TextStyle(
+    color: Color(0xFF2A3E34),
+    fontSize: 11.9,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle medium17_3 = TextStyle(
+    color: Color(0xFF2A3E34),
+    fontSize: 17.3,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w500,
   );
 }

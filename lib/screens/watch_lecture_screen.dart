@@ -10,13 +10,8 @@ class WatchLectureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> lectureTabs = [
-      S.of(context).lecture_tab1,
-      S.of(context).lecture_tab2,
-      S.of(context).lecture_tab3,
-      S.of(context).lecture_tab4
-    ];
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFFFF),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,21 +26,7 @@ class WatchLectureScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Divider(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 43 / 844,
-              width: MediaQuery.of(context).size.width,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return LectureTabs(
-                    tabName: lectureTabs[index],
-                  );
-                },
-                itemCount: 4,
-              ),
-            ),
-            const Divider(),
+            LectureTabs(),
           ],
         ),
       ),
