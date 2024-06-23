@@ -120,6 +120,26 @@ class S {
     );
   }
 
+  /// `First name`
+  String get first_name_subtitle {
+    return Intl.message(
+      'First name',
+      name: 'first_name_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name`
+  String get last_name_subtitle {
+    return Intl.message(
+      'Last name',
+      name: 'last_name_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your email`
   String get email_hint {
     return Intl.message(
@@ -155,6 +175,26 @@ class S {
     return Intl.message(
       'Enter your mobile number',
       name: 'mobile_number_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your first name`
+  String get first_name_hint {
+    return Intl.message(
+      'Enter your first name',
+      name: 'first_name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your last name`
+  String get last_name_hint {
+    return Intl.message(
+      'Enter your last name',
+      name: 'last_name_hint',
       desc: '',
       args: [],
     );
@@ -481,20 +521,40 @@ class S {
   }
 
   /// `Submit All Answers?`
-  String get alert_dialog_title {
+  String get submit_alert_dialog_title {
     return Intl.message(
       'Submit All Answers?',
-      name: 'alert_dialog_title',
+      name: 'submit_alert_dialog_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exit Al-Menbar?`
+  String get exit_alert_dialog_title {
+    return Intl.message(
+      'Exit Al-Menbar?',
+      name: 'exit_alert_dialog_title',
       desc: '',
       args: [],
     );
   }
 
   /// `Are you sure you want to submit all Multiple Choice & Essay responses?`
-  String get alert_dialog_content {
+  String get submit_alert_dialog_content {
     return Intl.message(
       'Are you sure you want to submit all Multiple Choice & Essay responses?',
-      name: 'alert_dialog_content',
+      name: 'submit_alert_dialog_content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to exit the app?`
+  String get exit_alert_dialog_content {
+    return Intl.message(
+      'Are you sure you want to exit the app?',
+      name: 'exit_alert_dialog_content',
       desc: '',
       args: [],
     );
@@ -515,6 +575,106 @@ class S {
     return Intl.message(
       'No, I am not',
       name: 'alert_dialog_no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email address should be as follows:\n'user@example.com'`
+  String get email_error {
+    return Intl.message(
+      'Email address should be as follows:\n\'user@example.com\'',
+      name: 'email_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email address!!`
+  String get email_empty {
+    return Intl.message(
+      'Please enter your email address!!',
+      name: 'email_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name should contain only letters without spaces or special characters.`
+  String get name_error {
+    return Intl.message(
+      'Name should contain only letters without spaces or special characters.',
+      name: 'name_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your name!!`
+  String get name_empty {
+    return Intl.message(
+      'Please enter your name!!',
+      name: 'name_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters & must contain at least:\none lowercase letter, one uppercase letter,\none number, and one special character.`
+  String get password_error {
+    return Intl.message(
+      'Password must be at least 8 characters & must contain at least:\none lowercase letter, one uppercase letter,\none number, and one special character.',
+      name: 'password_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password!!`
+  String get password_empty {
+    return Intl.message(
+      'Please enter your password!!',
+      name: 'password_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match!!`
+  String get confirm_password_error {
+    return Intl.message(
+      'Passwords do not match!!',
+      name: 'confirm_password_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please confirm your password!!`
+  String get confirm_password_empty {
+    return Intl.message(
+      'Please confirm your password!!',
+      name: 'confirm_password_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile number should consist of your country code + 10 digits.`
+  String get mobile_number_error {
+    return Intl.message(
+      'Mobile number should consist of your country code + 10 digits.',
+      name: 'mobile_number_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your mobile number!!`
+  String get mobile_number_empty {
+    return Intl.message(
+      'Please enter your mobile number!!',
+      name: 'mobile_number_empty',
       desc: '',
       args: [],
     );

@@ -4,14 +4,17 @@ import '../generated/l10n.dart';
 import '../utils/app_styles.dart';
 
 class LoginButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
   const LoginButton({
     super.key,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         iconColor: const Color(0xFFFFFFFF),
         minimumSize: Size(

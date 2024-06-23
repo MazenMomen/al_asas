@@ -27,7 +27,7 @@ class McqQuestions extends StatelessWidget {
         child: Column(
           children: [
             const Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerStart,
               child: Text(
                 'سؤال',
                 style: AppStyles.bold12_51,

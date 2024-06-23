@@ -58,7 +58,7 @@ abstract class AppStyles {
   static const TextStyle regular57_68 = TextStyle(
     color: Color(0xFFFFFFFF),
     fontSize: 57.68,
-    fontFamily: 'DecoType Thuluth II',
+    fontFamily: 'DecoType Thuluth',
     fontWeight: FontWeight.w400,
   );
   static const TextStyle black16 = TextStyle(

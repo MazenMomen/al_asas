@@ -32,7 +32,9 @@ class LectureTabs extends StatelessWidget {
         maxWidth: MediaQuery.of(context).size.width / 4,
       ),
       isSelected: isSelected,
-      onPressed: (index) {},
+      onPressed: (index) {
+        Navigator.pushNamed(context, '/mcqExam');
+      },
       children: [
         for (int i = 0; i < isSelected.length; i++)
           Container(
@@ -51,7 +53,7 @@ class LectureTabs extends StatelessWidget {
                 ),
               ),
             ),
-            alignment: Alignment.center,
+            alignment: AlignmentDirectional.center,
             child: Text(
               tabNames[i],
               style: AppStyles.regular10_31,

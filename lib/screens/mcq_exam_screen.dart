@@ -10,22 +10,27 @@ class McqExamScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color(0xFFFFFFFF),
-        body: CustomScrollView(
-          slivers: [
-            const McqExamAppBar(),
-            SliverList.builder(
-              itemBuilder: (context, index) {
-                return const McqQuestions();
-              },
-              itemCount: 10,
-            ),
-            SubmitExamButton(
-              buttonChild: S.of(context).to_essay_exam,
-              onPressed: () {},
-            )
-          ],
-        ));
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+          backgroundColor: const Color(0xFFFFFFFF),
+          body: CustomScrollView(
+            slivers: [
+              const McqExamAppBar(),
+              SliverList.builder(
+                itemBuilder: (context, index) {
+                  return const McqQuestions();
+                },
+                itemCount: 10,
+              ),
+              SubmitExamButton(
+                buttonChild: S.of(context).to_essay_exam,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/essayExam');
+                },
+              )
+            ],
+          )),
+    );
   }
 }

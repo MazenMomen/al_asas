@@ -9,15 +9,14 @@ class EssayExamAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      backgroundColor: const Color(0xFFFFFFFF),
-      surfaceTintColor: const Color(0xFFFFFFFF),
+    return const SliverAppBar(
+      backgroundColor: Color(0xFFFFFFFF),
+      surfaceTintColor: Color(0xFFFFFFFF),
       floating: true,
       leading: BackButton(
-        color: const Color(0xFF2A3E34),
-        onPressed: () {},
+        color: Color(0xFF2A3E34),
       ),
-      title: const Text(
+      title: Text(
         'المقالي',
         style: AppStyles.medium17_3,
       ),

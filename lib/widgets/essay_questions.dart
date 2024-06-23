@@ -25,7 +25,7 @@ class EssayQuestions extends StatelessWidget {
         child: Column(
           children: [
             const Align(
-              alignment: Alignment.centerRight,
+              alignment: AlignmentDirectional.centerStart,
               child: Text(
                 'سؤال',
                 style: AppStyles.bold12_51,
@@ -38,18 +38,17 @@ class EssayQuestions extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: 'أدخل الإجابة هنا',
                   hintStyle: AppStyles.regular10_31,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color(0xFF2A3E34), width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(3.56)),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF717171), width: 1),
                   ),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: UnderlineInputBorder(
                     borderSide:
-                        BorderSide(color: Color(0xFF2A3E34), width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(3.56)),
+                        BorderSide(color: Color(0xFF2A3E34), width: 1.5),
                   ),
                 ),
+                minLines: 1,
                 maxLines: 10,
+                maxLength: 1000,
               ),
             ),
           ],

@@ -22,28 +22,40 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "alert_dialog_content": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to submit all Multiple Choice & Essay responses?"),
         "alert_dialog_no": MessageLookupByLibrary.simpleMessage("No, I am not"),
-        "alert_dialog_title":
-            MessageLookupByLibrary.simpleMessage("Submit All Answers?"),
         "alert_dialog_yes":
             MessageLookupByLibrary.simpleMessage("Yes, I am sure"),
         "aqidah_book": MessageLookupByLibrary.simpleMessage("Osool Al-Iman"),
         "aqidah_name": MessageLookupByLibrary.simpleMessage("Faith"),
         "aqidah_sheikh":
             MessageLookupByLibrary.simpleMessage("Muhammad Ismail Al-Muqaddem"),
+        "confirm_password_empty": MessageLookupByLibrary.simpleMessage(
+            "Please confirm your password!!"),
+        "confirm_password_error":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match!!"),
         "confirm_password_hint":
             MessageLookupByLibrary.simpleMessage("ُEnter your password again"),
         "confirm_password_subtitle":
             MessageLookupByLibrary.simpleMessage("Confirm your password"),
         "description": MessageLookupByLibrary.simpleMessage(
             "First educational application for Islamic Studies using AI"),
+        "email_empty": MessageLookupByLibrary.simpleMessage(
+            "Please enter your email address!!"),
+        "email_error": MessageLookupByLibrary.simpleMessage(
+            "Email address should be as follows:\n\'user@example.com\'"),
         "email_hint": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "email_subtitle": MessageLookupByLibrary.simpleMessage("eEmail"),
+        "exit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to exit the app?"),
+        "exit_alert_dialog_title":
+            MessageLookupByLibrary.simpleMessage("Exit Al-Menbar?"),
         "fiqh_book":
             MessageLookupByLibrary.simpleMessage("Al-Fiqh Al-Moyassar"),
         "fiqh_name": MessageLookupByLibrary.simpleMessage("Jurisprudence"),
+        "first_name_hint":
+            MessageLookupByLibrary.simpleMessage("Enter your first name"),
+        "first_name_subtitle":
+            MessageLookupByLibrary.simpleMessage("First name"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "hadith_book":
@@ -54,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "have_account":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "home_button": MessageLookupByLibrary.simpleMessage("Home"),
+        "last_name_hint":
+            MessageLookupByLibrary.simpleMessage("Enter your last name"),
+        "last_name_subtitle": MessageLookupByLibrary.simpleMessage("Last name"),
         "learn_button": MessageLookupByLibrary.simpleMessage("Learn"),
         "lecture_tab1": MessageLookupByLibrary.simpleMessage("About"),
         "lecture_tab2": MessageLookupByLibrary.simpleMessage("Content"),
@@ -64,19 +79,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "library_button": MessageLookupByLibrary.simpleMessage("Library"),
         "login_button": MessageLookupByLibrary.simpleMessage("Login"),
         "login_page": MessageLookupByLibrary.simpleMessage("Login"),
+        "mobile_number_empty": MessageLookupByLibrary.simpleMessage(
+            "Please enter your mobile number!!"),
+        "mobile_number_error": MessageLookupByLibrary.simpleMessage(
+            "Mobile number should consist of your country code + 10 digits."),
         "mobile_number_hint":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "mobile_number_subtitle":
             MessageLookupByLibrary.simpleMessage("Mobile number"),
+        "name_empty":
+            MessageLookupByLibrary.simpleMessage("Please enter your name!!"),
+        "name_error": MessageLookupByLibrary.simpleMessage(
+            "Name should contain only letters without spaces or special characters."),
         "no_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account? "),
         "or": MessageLookupByLibrary.simpleMessage("or login with"),
+        "password_empty": MessageLookupByLibrary.simpleMessage(
+            "Please enter your password!!"),
+        "password_error": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters & must contain at least:\none lowercase letter, one uppercase letter,\none number, and one special character."),
         "password_hint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "password_subtitle": MessageLookupByLibrary.simpleMessage("Password"),
         "profile_button": MessageLookupByLibrary.simpleMessage("My Profile"),
         "register_button": MessageLookupByLibrary.simpleMessage("Register"),
         "register_page": MessageLookupByLibrary.simpleMessage("Register"),
+        "submit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to submit all Multiple Choice & Essay responses?"),
+        "submit_alert_dialog_title":
+            MessageLookupByLibrary.simpleMessage("Submit All Answers?"),
         "submit_exam": MessageLookupByLibrary.simpleMessage("Submit"),
         "support_button": MessageLookupByLibrary.simpleMessage("Support"),
         "tafsir_book":

@@ -1,5 +1,7 @@
 import 'package:al_asas/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class GoogleLoginButton extends StatelessWidget {
   const GoogleLoginButton({
@@ -20,7 +22,7 @@ class GoogleLoginButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      child: Image.asset(
+      child: SvgPicture.asset(
         Assets.imagesGoogle,
         width: MediaQuery.of(context).size.width * 25 / 390,
         height: MediaQuery.of(context).size.height * 25 / 844,

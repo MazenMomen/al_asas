@@ -1,17 +1,22 @@
-import 'package:flutter/material.dart';
-
-import '../generated/l10n.dart';
-import '../utils/app_styles.dart';
+import 'package:al_asas/utils/app_images.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginHeader extends StatelessWidget {
+  final double height;
   const LoginHeader({
     super.key,
+    required this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+        height: height,
         child: Center(
-            child: Text(S.of(context).title, style: AppStyles.regular49_41)));
+            child: SvgPicture.asset(
+          Assets.imagesLogoGreen,
+          height: MediaQuery.of(context).size.height * 84.4 / 844,
+        )));
   }
 }

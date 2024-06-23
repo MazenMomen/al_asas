@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'app_images.dart';
 
 final navBarIcons = <Widget>[
-  Image.asset(Assets.imagesLearn, color: Colors.white),
-  Image.asset(Assets.imagesLibrary, color: Colors.white),
-  Image.asset(Assets.imagesSupport, color: Colors.white),
-  Image.asset(Assets.imagesProfile, color: Colors.white),
+  SvgPicture.asset(Assets.imagesLearn),
+  SvgPicture.asset(Assets.imagesLibrary),
+  SvgPicture.asset(Assets.imagesSupport),
+  SvgPicture.asset(Assets.imagesProfile),
 ];

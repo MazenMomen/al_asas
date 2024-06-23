@@ -10,24 +10,30 @@ class WatchLectureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const LectureVideo(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 43 / 844,
-              child: Center(
-                child: Text(
-                  S.of(context).lecture_title,
-                  style: AppStyles.black14,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        Navigator.pushNamed(context, '/bottomNavBar');
+      },
+      child: Scaffold(
+        backgroundColor: const Color(0xFFFFFFFF),
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const LectureVideo(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 43 / 844,
+                child: Center(
+                  child: Text(
+                    S.of(context).lecture_title,
+                    style: AppStyles.black14,
+                  ),
                 ),
               ),
-            ),
-            LectureTabs(),
-          ],
+              LectureTabs(),
+            ],
+          ),
         ),
       ),
     );

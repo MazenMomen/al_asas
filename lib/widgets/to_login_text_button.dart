@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
 
 class ToLoginTextButton extends StatelessWidget {
+  final VoidCallback onTap;
+
   const ToLoginTextButton({
     super.key,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: RichText(
           text: TextSpan(children: [
         TextSpan(

@@ -8,13 +8,15 @@ class McqExamAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SliverAppBar(
-      backgroundColor: Color(0xFFFFFFFF),
-      surfaceTintColor: Color(0xFFFFFFFF),
+    return SliverAppBar(
+      backgroundColor: const Color(0xFFFFFFFF),
+      surfaceTintColor: const Color(0xFFFFFFFF),
       floating: true,
+      automaticallyImplyLeading: false,
       title: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
-        child: Text(
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 12 / 390),
+        child: const Text(
           'الامتحان',
           style: AppStyles.medium17_3,
         ),

@@ -17,7 +17,9 @@ class LearnGridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, '/watchLecture');
+      },
       child: Container(
         margin: EdgeInsetsDirectional.only(
           top: MediaQuery.of(context).size.height * 10 / 844,
@@ -49,9 +51,12 @@ class LearnGridCard extends StatelessWidget {
                 flex: 2,
                 child: Align(
                   alignment: AlignmentDirectional.topCenter,
-                  child: Text(
-                    subjectName,
-                    style: AppStyles.regular57_68,
+                  child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      subjectName,
+                      style: AppStyles.regular57_68,
+                    ),
                   ),
                 ),
               ),
