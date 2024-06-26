@@ -16,7 +16,7 @@ class LoginHeader extends StatelessWidget {
         child: Center(
             child: SvgPicture.asset(
           Assets.imagesLogoGreen,
-          height: MediaQuery.of(context).size.height * 84.4 / 844,
+          height: MediaQuery.of(context).size.height * 80 / 844,
         )));
   }
 }

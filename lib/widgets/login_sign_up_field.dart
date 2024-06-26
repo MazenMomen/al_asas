@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../utils/app_styles.dart';
 
 class LoginSignUpField extends StatelessWidget {
@@ -10,7 +7,6 @@ class LoginSignUpField extends StatelessWidget {
   final Widget prefixIcon;
   final Widget? suffixIcon;
   final bool? isObscureText;
-  final double? height;
   final double? width;
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
@@ -22,7 +18,6 @@ class LoginSignUpField extends StatelessWidget {
     required this.prefixIcon,
     this.suffixIcon,
     this.isObscureText,
-    this.height,
     this.width,
     this.validator,
     this.inputFormatters,
@@ -31,28 +26,41 @@ class LoginSignUpField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      maxLines: 1,
-      controller: controller,
-      onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
-      inputFormatters: inputFormatters,
-      validator: validator,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      textDirection: TextDirection.ltr,
-      decoration: InputDecoration(
-        isDense: true,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-        fillColor: const Color(0xFFFFFFFF),
-        filled: true,
-        hintText: hintText,
-        hintStyle: AppStyles.regular7_64,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+    return SizedBox(
+      width: width ?? double.infinity,
+      child: TextFormField(
+        maxLines: 1,
+        controller: controller,
+        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+        inputFormatters: inputFormatters,
+        validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        textDirection: TextDirection.ltr,
+        decoration: InputDecoration(
+          isDense: true,
+          contentPadding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 10 / 390,
+              vertical: 5),
+          fillColor: const Color(0xFFFFFFFF),
+          filled: true,
+          hintText: hintText,
+          hintStyle: AppStyles.regular7_64,
+          prefixIcon: prefixIcon,
+          prefixIconConstraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 15 / 844,
+            minWidth: MediaQuery.of(context).size.width * 40 / 390,
+          ),
+          suffixIcon: suffixIcon,
+          suffixIconConstraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 30 / 844,
+            minWidth: MediaQuery.of(context).size.width * 40 / 390,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
         ),
+        obscureText: isObscureText ?? false,
       ),
-      obscureText: isObscureText ?? false,
     );
   }
 }

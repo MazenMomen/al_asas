@@ -58,6 +58,9 @@ class _LoginContentState extends State<LoginContent> {
                   child: Text(S.of(context).email_subtitle,
                       style: AppStyles.regular13_5),
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 5 / 844,
+                ),
                 LoginSignUpField(
                   validator: (val) {
                     if (val!.isEmpty) {
@@ -68,7 +71,6 @@ class _LoginContentState extends State<LoginContent> {
 
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 27 / 844,
                   hintText: S.of(context).email_hint,
                   prefixIcon: const Icon(
                     Icons.person,
@@ -84,6 +86,9 @@ class _LoginContentState extends State<LoginContent> {
                   child: Text(S.of(context).password_subtitle,
                       style: AppStyles.regular13_5),
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 5 / 844,
+                ),
                 LoginSignUpField(
                   validator: (val) {
                     if (val!.isEmpty) {
@@ -94,7 +99,6 @@ class _LoginContentState extends State<LoginContent> {
 
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 27 / 844,
                   hintText: S.of(context).password_hint,
                   prefixIcon: const Icon(Icons.security,
                       color: Color(0xFF717171), size: 16),
@@ -138,7 +142,7 @@ class _LoginContentState extends State<LoginContent> {
           ),
           const TextInDivider(),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 10 / 844,
+            height: MediaQuery.of(context).size.height * 5 / 844,
           ),
           const GoogleLoginButton(),
           SizedBox(

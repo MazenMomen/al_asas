@@ -28,21 +28,34 @@ class _LectureVideoState extends State<LectureVideo> {
 
   @override
   Widget build(BuildContext context) {
-    return YoutubePlayer(
-      controller: _controller,
-      showVideoProgressIndicator: true,
-      progressIndicatorColor: const Color(0xFF2A3E34),
-      progressColors: const ProgressBarColors(
-        playedColor: Color(0xFF2A3E34),
-        handleColor: Color(0xFF2A3E34),
+    return YoutubePlayerBuilder(
+      player: YoutubePlayer(
+        controller: _controller,
+        showVideoProgressIndicator: true,
+        progressIndicatorColor: const Color(0xFF2A3E34),
+        progressColors: const ProgressBarColors(
+          playedColor: Color(0xFF2A3E34),
+          handleColor: Color(0xFF2A3E34),
+        ),
+        topActions: const [],
+        bottomActions: [
+          CurrentPosition(),
+          ProgressBar(isExpanded: true),
+          RemainingDuration(),
+          const SizedBox(width: 8),
+          const PlaybackSpeedButton(),
+          FullScreenButton(),
+        ],
       ),
-      bottomActions: [
-        CurrentPosition(),
-        ProgressBar(isExpanded: true),
-        RemainingDuration(),
-        const PlaybackSpeedButton(),
-        FullScreenButton(),
-      ],
+      builder: (context, player) {
+        return player;
+      },
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

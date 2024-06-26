@@ -37,7 +37,7 @@ class _SignUpContentState extends State<SignUpContent> {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width * 25 / 390,
-        vertical: MediaQuery.of(context).size.height * 10 / 844,
+        vertical: MediaQuery.of(context).size.height * 15 / 844,
       ),
       width: MediaQuery.of(context).size.width * 340 / 390,
       decoration: ShapeDecoration(
@@ -58,7 +58,7 @@ class _SignUpContentState extends State<SignUpContent> {
         children: [
           Text(S.of(context).register_page, style: AppStyles.black29_38),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 10 / 844,
+            height: MediaQuery.of(context).size.height * 15 / 844,
           ),
           Form(
             key: _formKey,
@@ -79,7 +79,6 @@ class _SignUpContentState extends State<SignUpContent> {
 
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 27 / 844,
                   hintText: S.of(context).email_hint,
                   prefixIcon: const Icon(Icons.person,
                       color: Color(0xFF717171), size: 16),
@@ -87,69 +86,69 @@ class _SignUpContentState extends State<SignUpContent> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 5 / 844,
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Align(
-                //           child: Text(S.of(context).first_name_subtitle,
-                //               style: AppStyles.regular13_5),
-                //         ),
-                //         LoginSignUpField(
-                //           inputFormatters: <TextInputFormatter>[
-                //             FilteringTextInputFormatter.allow(
-                //               RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
-                //             ),
-                //           ],
-                //           validator: (val) {
-                //             if (val!.isEmpty) {
-                //               return S.of(context).name_empty;
-                //             } else if (!val.isValidName) {
-                //               return S.of(context).name_error;
-                //             }
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          child: Text(S.of(context).first_name_subtitle,
+                              style: AppStyles.regular13_5),
+                        ),
+                        LoginSignUpField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.allow(
+                              RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
+                            ),
+                          ],
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return S.of(context).name_empty;
+                            } else if (!val.isValidName) {
+                              return S.of(context).name_error;
+                            }
 
-                //             return null;
-                //           },
-                //           width: MediaQuery.of(context).size.width * 128 / 390,
-                //           hintText: S.of(context).first_name_hint,
-                //           prefixIcon: const Icon(Icons.person,
-                //               color: Color(0xFF717171), size: 16),
-                //         ),
-                //       ],
-                //     ),
-                //     Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Align(
-                //           child: Text(S.of(context).last_name_subtitle,
-                //               style: AppStyles.regular13_5),
-                //         ),
-                //         LoginSignUpField(
-                //           inputFormatters: <TextInputFormatter>[
-                //             FilteringTextInputFormatter.allow(
-                //               RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
-                //             ),
-                //           ],
-                //           validator: (val) {
-                //             if (val!.isEmpty) {
-                //               return S.of(context).name_empty;
-                //             } else if (!val.isValidName) {
-                //               return S.of(context).name_error;
-                //             }
+                            return null;
+                          },
+                          width: MediaQuery.of(context).size.width * 128 / 390,
+                          hintText: S.of(context).first_name_hint,
+                          prefixIcon: const Icon(Icons.person,
+                              color: Color(0xFF717171), size: 16),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          child: Text(S.of(context).last_name_subtitle,
+                              style: AppStyles.regular13_5),
+                        ),
+                        LoginSignUpField(
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.allow(
+                              RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
+                            ),
+                          ],
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return S.of(context).name_empty;
+                            } else if (!val.isValidName) {
+                              return S.of(context).name_error;
+                            }
 
-                //             return null;
-                //           },
-                //           width: MediaQuery.of(context).size.width * 128 / 390,
-                //           hintText: S.of(context).last_name_hint,
-                //           prefixIcon: const Icon(Icons.person,
-                //               color: Color(0xFF717171), size: 16),
-                //         ),
-                //       ],
-                //     ),
-                //   ],
-                // ),
+                            return null;
+                          },
+                          width: MediaQuery.of(context).size.width * 128 / 390,
+                          hintText: S.of(context).last_name_hint,
+                          prefixIcon: const Icon(Icons.person,
+                              color: Color(0xFF717171), size: 16),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 5 / 844,
                 ),
@@ -169,7 +168,6 @@ class _SignUpContentState extends State<SignUpContent> {
 
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 85 / 844,
                   hintText: S.of(context).password_hint,
                   prefixIcon: const Icon(Icons.security,
                       color: Color(0xFF717171), size: 16),
@@ -234,7 +232,6 @@ class _SignUpContentState extends State<SignUpContent> {
                 ),
                 LoginSignUpField(
                   inputFormatters: <TextInputFormatter>[
-                    // add a regex to allow only numbers and plus sign
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9+]')),
                   ],
                   validator: (val) {
@@ -246,7 +243,6 @@ class _SignUpContentState extends State<SignUpContent> {
 
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 45 / 844,
                   hintText: S.of(context).mobile_number_hint,
                   prefixIcon: const Icon(Icons.phone_android,
                       color: Color(0xFF717171), size: 16),
@@ -265,7 +261,7 @@ class _SignUpContentState extends State<SignUpContent> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 5 / 844,
+            height: MediaQuery.of(context).size.height * 10 / 844,
           ),
           const TextInDivider(),
           const GoogleLoginButton(),

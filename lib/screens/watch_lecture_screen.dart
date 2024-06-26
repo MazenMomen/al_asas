@@ -10,32 +10,41 @@ class WatchLectureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      onPopInvoked: (didPop) {
-        Navigator.pushNamed(context, '/bottomNavBar');
-      },
-      child: Scaffold(
-        backgroundColor: const Color(0xFFFFFFFF),
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const LectureVideo(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 43 / 844,
-                child: Center(
-                  child: Text(
-                    S.of(context).lecture_title,
-                    style: AppStyles.black14,
+    return OrientationBuilder(
+        builder: (BuildContext context, Orientation orientation) {
+      if (orientation == Orientation.landscape) {
+        return const Scaffold(
+          body: FittedBox(fit: BoxFit.fitHeight, child: LectureVideo()),
+        );
+      } else {
+        return PopScope(
+          canPop: false,
+          onPopInvoked: (didPop) {
+            Navigator.pushNamed(context, '/bottomNavBar');
+          },
+          child: Scaffold(
+            backgroundColor: const Color(0xFFFFFFFF),
+            body: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const FittedBox(fit: BoxFit.fitHeight, child: LectureVideo()),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 43 / 844,
+                    child: Center(
+                      child: Text(
+                        S.of(context).lecture_title,
+                        style: AppStyles.black14,
+                      ),
+                    ),
                   ),
-                ),
+                  LectureTabs(),
+                ],
               ),
-              LectureTabs(),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        );
+      }
+    });
   }
 }
