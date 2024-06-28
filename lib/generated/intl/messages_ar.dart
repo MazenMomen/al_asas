@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل أنت متأكد أنك تريد الخروج من التطبيق؟"),
         "exit_alert_dialog_title":
             MessageLookupByLibrary.simpleMessage("الخروج من التطبيق؟"),
+        "final_exam":
+            MessageLookupByLibrary.simpleMessage("ادخل الامتحان النهائي"),
         "fiqh_book": MessageLookupByLibrary.simpleMessage(
             "الفقه الميسر في ضوء الكتاب والسنة"),
         "fiqh_name": MessageLookupByLibrary.simpleMessage("الفقه"),
@@ -78,11 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "lecture_tab3":
             MessageLookupByLibrary.simpleMessage("نتائج الاختبارات"),
         "lecture_tab4": MessageLookupByLibrary.simpleMessage("الأسئلة"),
-        "lecture_title":
-            MessageLookupByLibrary.simpleMessage("التفسير | المحاضرة الأولى"),
         "library_button": MessageLookupByLibrary.simpleMessage("المكتبة"),
-        "login_button": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "login_page": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout_button": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "mobile_number_empty":
             MessageLookupByLibrary.simpleMessage("من فضلك أدخل رقم جوالك"),
         "mobile_number_error": MessageLookupByLibrary.simpleMessage(
@@ -105,8 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_subtitle":
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "profile_button": MessageLookupByLibrary.simpleMessage("حسابي"),
-        "register_button":
-            MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+        "profile_header": MessageLookupByLibrary.simpleMessage("بيانات الحساب"),
         "register_page": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "submit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد تسليم جميع الإجابات الاختيارية والمقالية؟"),
@@ -120,8 +119,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "tafsir_sheikh":
             MessageLookupByLibrary.simpleMessage("بشرح الشيخ عبد الرزاق البدر"),
         "title": MessageLookupByLibrary.simpleMessage("المنبر"),
-        "to_essay_exam": MessageLookupByLibrary.simpleMessage("التالي"),
-        "to_sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-        "to_sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد")
+        "to_essay_exam": MessageLookupByLibrary.simpleMessage("التالي")
       };
 }

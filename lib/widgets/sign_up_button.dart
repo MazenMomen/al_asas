@@ -25,8 +25,7 @@ class SignUpButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      child:
-          Text(S.of(context).register_button, style: AppStyles.extraBold10_31),
+      child: Text(S.of(context).register_page, style: AppStyles.extraBold10_31),
     );
   }
 }

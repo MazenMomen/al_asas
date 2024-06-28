@@ -15,13 +15,10 @@
     "first_name_hint" : "أدخل اسمك الأول",
     "last_name_hint" : "أدخل اسمك الأخير",
     "forgot_password" : "نسيت كلمة المرور؟",
-    "login_button" : "تسجيل الدخول",
     "register_button" : "إنشاء حساب جديد",
     "or" : "أو باستخدام",
     "no_account" : " ليس لديك حساب؟",
     "have_account" : "لديك حساب بالفعل؟",
-    "to_sign_up" : "إنشاء حساب جديد",
-    "to_sign_in" : "تسجيل الدخول",
     "description": "التطبيق التعليمي الأول لدراسة العلـــوم الشرعيـــة باستخـــدام الذكـــاء الاصطناعــي",
     "home_button" : "الرئيسية",
     "profile_button" : "حسابي",
@@ -61,5 +58,8 @@
     "confirm_password_error": "كلمات المرور غير متطابقة",
     "confirm_password_empty": "من فضلك أدخل كلمة المرور مرة أخرى",
     "mobile_number_error": "رقم الجوال يجب أن يحتوي على رمز البلد + 10 أرقام",
-    "mobile_number_empty": "من فضلك أدخل رقم جوالك"
+    "mobile_number_empty": "من فضلك أدخل رقم جوالك",
+    "final_exam": "ادخل الامتحان النهائي",
+    "profile_header": "بيانات الحساب",
+    "logout_button": "تسجيل الخروج"
 }

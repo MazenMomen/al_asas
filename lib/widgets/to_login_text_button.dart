@@ -31,7 +31,7 @@ class ToLoginTextButton extends StatelessWidget {
           ),
         ),
         TextSpan(
-          text: S.of(context).to_sign_in,
+          text: S.of(context).login_page,
           style: const TextStyle(
             color: Color(0xFFFFFFFF),
             fontSize: 14.30,

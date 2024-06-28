@@ -5,7 +5,7 @@ import 'app_images.dart';
 
 final navBarIcons = <Widget>[
   SvgPicture.asset(Assets.imagesLearn),
-  SvgPicture.asset(Assets.imagesLibrary),
-  SvgPicture.asset(Assets.imagesSupport),
+  // SvgPicture.asset(Assets.imagesLibrary),
+  // SvgPicture.asset(Assets.imagesSupport),
   SvgPicture.asset(Assets.imagesProfile),
 ];

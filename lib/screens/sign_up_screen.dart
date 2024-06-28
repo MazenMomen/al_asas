@@ -18,11 +18,11 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     LoginHeader(
-                      height: MediaQuery.of(context).size.height * 1 / 8,
+                      height: MediaQuery.of(context).size.height * 1 / 6,
                     ),
                     const SignUpContent(),
                     LoginFooter(
-                      height: MediaQuery.of(context).size.height * 1 / 6,
+                      height: MediaQuery.of(context).size.height * 1 / 5,
                     )
                   ],
                 ),

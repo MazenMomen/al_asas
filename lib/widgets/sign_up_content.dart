@@ -222,31 +222,31 @@ class _SignUpContentState extends State<SignUpContent> {
                   ),
                   isObscureText: isObscureConfirmation,
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 5 / 844,
-                ),
-                Align(
-                  alignment: AlignmentDirectional.topStart,
-                  child: Text(S.of(context).mobile_number_subtitle,
-                      style: AppStyles.regular13_5),
-                ),
-                LoginSignUpField(
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.allow(RegExp(r'[0-9+]')),
-                  ],
-                  validator: (val) {
-                    if (val!.isEmpty) {
-                      return S.of(context).mobile_number_empty;
-                    } else if (!val.isValidPhone) {
-                      return S.of(context).mobile_number_error;
-                    }
+                // SizedBox(
+                //   height: MediaQuery.of(context).size.height * 5 / 844,
+                // ),
+                // Align(
+                //   alignment: AlignmentDirectional.topStart,
+                //   child: Text(S.of(context).mobile_number_subtitle,
+                //       style: AppStyles.regular13_5),
+                // ),
+                // LoginSignUpField(
+                //   inputFormatters: <TextInputFormatter>[
+                //     FilteringTextInputFormatter.allow(RegExp(r'[0-9+]')),
+                //   ],
+                //   validator: (val) {
+                //     if (val!.isEmpty) {
+                //       return S.of(context).mobile_number_empty;
+                //     } else if (!val.isValidPhone) {
+                //       return S.of(context).mobile_number_error;
+                //     }
 
-                    return null;
-                  },
-                  hintText: S.of(context).mobile_number_hint,
-                  prefixIcon: const Icon(Icons.phone_android,
-                      color: Color(0xFF717171), size: 16),
-                ),
+                //     return null;
+                //   },
+                //   hintText: S.of(context).mobile_number_hint,
+                //   prefixIcon: const Icon(Icons.phone_android,
+                //       color: Color(0xFF717171), size: 16),
+                // ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 10 / 844,
                 ),

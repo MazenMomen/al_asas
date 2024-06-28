@@ -3,8 +3,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import '../utils/bottom_nav_bar_icons.dart';
 import '../screens/learn_screen.dart';
 import '../screens/profile_screen.dart';
-import '../screens/support_screen.dart';
-import '../screens/library_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -21,8 +19,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     final List screens = <Widget>[
       const LearnScreen(),
-      const LibraryScreen(),
-      const SupportScreen(),
+      // const LibraryScreen(),
+      // const SupportScreen(),
       const ProfileScreen(),
     ];
 

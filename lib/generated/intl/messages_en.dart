@@ -44,11 +44,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "email_error": MessageLookupByLibrary.simpleMessage(
             "Email address should be as follows:\n\'user@example.com\'"),
         "email_hint": MessageLookupByLibrary.simpleMessage("Enter your email"),
-        "email_subtitle": MessageLookupByLibrary.simpleMessage("eEmail"),
+        "email_subtitle": MessageLookupByLibrary.simpleMessage("Email"),
         "exit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to exit the app?"),
         "exit_alert_dialog_title":
             MessageLookupByLibrary.simpleMessage("Exit Al-Menbar?"),
+        "final_exam":
+            MessageLookupByLibrary.simpleMessage("Enter the final exam"),
         "fiqh_book":
             MessageLookupByLibrary.simpleMessage("Al-Fiqh Al-Moyassar"),
         "fiqh_name": MessageLookupByLibrary.simpleMessage("Jurisprudence"),
@@ -74,11 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "lecture_tab2": MessageLookupByLibrary.simpleMessage("Content"),
         "lecture_tab3": MessageLookupByLibrary.simpleMessage("Tests Results"),
         "lecture_tab4": MessageLookupByLibrary.simpleMessage("Questions"),
-        "lecture_title":
-            MessageLookupByLibrary.simpleMessage("Interpretation | Lecture 1"),
         "library_button": MessageLookupByLibrary.simpleMessage("Library"),
-        "login_button": MessageLookupByLibrary.simpleMessage("Login"),
         "login_page": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout_button": MessageLookupByLibrary.simpleMessage("Logout"),
         "mobile_number_empty": MessageLookupByLibrary.simpleMessage(
             "Please enter your mobile number!!"),
         "mobile_number_error": MessageLookupByLibrary.simpleMessage(
@@ -102,7 +102,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "password_subtitle": MessageLookupByLibrary.simpleMessage("Password"),
         "profile_button": MessageLookupByLibrary.simpleMessage("My Profile"),
-        "register_button": MessageLookupByLibrary.simpleMessage("Register"),
+        "profile_header":
+            MessageLookupByLibrary.simpleMessage("Account Information"),
         "register_page": MessageLookupByLibrary.simpleMessage("Register"),
         "submit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to submit all Multiple Choice & Essay responses?"),

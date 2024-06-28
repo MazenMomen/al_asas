@@ -1,3 +1,4 @@
+import 'package:al_asas/data/cubits/get_courses_cubit/get_courses_cubit.dart';
 import 'package:al_asas/data/cubits/mcq_cubit/mcq_cubit.dart';
 import 'package:al_asas/screens/essay_exam_screen.dart';
 import 'package:al_asas/screens/mcq_exam_screen.dart';
@@ -31,9 +32,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<McqCubit>(
           create: (context) => McqCubit(),
         ),
-        // BlocProvider(
-        //   create: (context) => SubjectBloc(),
-        // ),
+        BlocProvider<GetCoursesCubit>(
+          create: (context) => GetCoursesCubit(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
           '/mcqExam': (context) => const McqExamScreen(),
           '/essayExam': (context) => const EssayExamScreen(),
         },
-        home: const McqExamScreen(),
+        home: const SignUpScreen(),
       ),
     );
   }

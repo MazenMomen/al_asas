@@ -80,10 +80,10 @@ class S {
     );
   }
 
-  /// `eEmail`
+  /// `Email`
   String get email_subtitle {
     return Intl.message(
-      'eEmail',
+      'Email',
       name: 'email_subtitle',
       desc: '',
       args: [],
@@ -205,26 +205,6 @@ class S {
     return Intl.message(
       'Forgot password?',
       name: 'forgot_password',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Login`
-  String get login_button {
-    return Intl.message(
-      'Login',
-      name: 'login_button',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Register`
-  String get register_button {
-    return Intl.message(
-      'Register',
-      name: 'register_button',
       desc: '',
       args: [],
     );
@@ -450,16 +430,6 @@ class S {
     );
   }
 
-  /// `Interpretation | Lecture 1`
-  String get lecture_title {
-    return Intl.message(
-      'Interpretation | Lecture 1',
-      name: 'lecture_title',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `About`
   String get lecture_tab1 {
     return Intl.message(
@@ -675,6 +645,36 @@ class S {
     return Intl.message(
       'Please enter your mobile number!!',
       name: 'mobile_number_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the final exam`
+  String get final_exam {
+    return Intl.message(
+      'Enter the final exam',
+      name: 'final_exam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account Information`
+  String get profile_header {
+    return Intl.message(
+      'Account Information',
+      name: 'profile_header',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout_button {
+    return Intl.message(
+      'Logout',
+      name: 'logout_button',
       desc: '',
       args: [],
     );

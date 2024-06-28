@@ -25,7 +25,7 @@ class LoginButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      child: Text(S.of(context).login_button, style: AppStyles.extraBold10_31),
+      child: Text(S.of(context).login_page, style: AppStyles.extraBold10_31),
     );
   }
 }
