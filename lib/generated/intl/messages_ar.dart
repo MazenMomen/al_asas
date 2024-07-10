@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "email_subtitle":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "error_dialog_button": MessageLookupByLibrary.simpleMessage("الرجوع"),
+        "error_dialog_title": MessageLookupByLibrary.simpleMessage("حدث خطأ!"),
         "exit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد الخروج من التطبيق؟"),
         "exit_alert_dialog_title":
@@ -81,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نتائج الاختبارات"),
         "lecture_tab4": MessageLookupByLibrary.simpleMessage("الأسئلة"),
         "library_button": MessageLookupByLibrary.simpleMessage("المكتبة"),
+        "login_error": MessageLookupByLibrary.simpleMessage(
+            "خطأ في البريد الإلكتروني أو كلمة المرور"),
         "login_page": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout_button": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "mobile_number_empty":
@@ -104,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "password_subtitle":
             MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "please_wait":
+            MessageLookupByLibrary.simpleMessage("برجاء الانتظار..."),
         "profile_button": MessageLookupByLibrary.simpleMessage("حسابي"),
         "profile_header": MessageLookupByLibrary.simpleMessage("بيانات الحساب"),
         "register_page": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
@@ -119,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tafsir_sheikh":
             MessageLookupByLibrary.simpleMessage("بشرح الشيخ عبد الرزاق البدر"),
         "title": MessageLookupByLibrary.simpleMessage("المنبر"),
-        "to_essay_exam": MessageLookupByLibrary.simpleMessage("التالي")
+        "to_essay_exam": MessageLookupByLibrary.simpleMessage("التالي"),
+        "visit_website_for_acc_details": MessageLookupByLibrary.simpleMessage(
+            "لعرض جميع بيانات الحساب أو تعديلها أو استكمالها، يمكنك زيارة الموقع الإلكتروني")
       };
 }

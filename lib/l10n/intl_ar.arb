@@ -61,5 +61,10 @@
     "mobile_number_empty": "من فضلك أدخل رقم جوالك",
     "final_exam": "ادخل الامتحان النهائي",
     "profile_header": "بيانات الحساب",
-    "logout_button": "تسجيل الخروج"
+    "logout_button": "تسجيل الخروج",
+    "visit_website_for_acc_details": "لعرض جميع بيانات الحساب أو تعديلها أو استكمالها، يمكنك زيارة الموقع الإلكتروني",
+    "login_error": "خطأ في البريد الإلكتروني أو كلمة المرور",
+    "error_dialog_title": "حدث خطأ!",
+    "error_dialog_button": "الرجوع",
+    "please_wait": "برجاء الانتظار..."
 }

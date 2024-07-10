@@ -6,20 +6,20 @@ class LearnGridCard extends StatelessWidget {
   final String subjectName;
   final String bookName;
   final String sheikhName;
+  final VoidCallback onTap;
 
   const LearnGridCard({
     super.key,
     required this.subjectName,
     required this.bookName,
     required this.sheikhName,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/watchLecture');
-      },
+      onTap: onTap,
       child: Container(
         margin: EdgeInsetsDirectional.only(
           top: MediaQuery.of(context).size.height * 10 / 844,

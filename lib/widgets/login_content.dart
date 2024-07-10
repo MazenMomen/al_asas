@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../data/cubits/login_request_cubit/login_request_cubit.dart';
 import '../generated/l10n.dart';
 import '../utils/app_styles.dart';
+import 'error_dialog.dart';
 import 'login_sign_up_field.dart';
 import 'google_login_button.dart';
 import 'login_button.dart';
@@ -19,7 +22,6 @@ class LoginContent extends StatefulWidget {
 
 class _LoginContentState extends State<LoginContent> {
   bool isObscureText = true;
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class _LoginContentState extends State<LoginContent> {
       child: Column(
         children: [
           Form(
-            key: _formKey,
+            key: context.read<LoginRequestCubit>().formKey,
             child: Column(
               children: [
                 Text(S.of(context).login_page, style: AppStyles.black29_38),
@@ -62,6 +64,7 @@ class _LoginContentState extends State<LoginContent> {
                   height: MediaQuery.of(context).size.height * 5 / 844,
                 ),
                 LoginSignUpField(
+                  controller: context.read<LoginRequestCubit>().emailController,
                   validator: (val) {
                     if (val!.isEmpty) {
                       return S.of(context).email_empty;
@@ -90,12 +93,15 @@ class _LoginContentState extends State<LoginContent> {
                   height: MediaQuery.of(context).size.height * 5 / 844,
                 ),
                 LoginSignUpField(
+                  controller:
+                      context.read<LoginRequestCubit>().passwordController,
                   validator: (val) {
                     if (val!.isEmpty) {
                       return S.of(context).password_empty;
-                    } else if (!val.isValidPassword) {
-                      return S.of(context).password_error;
                     }
+                    // else if (!val.isValidPassword) {
+                    //   return S.of(context).password_error;
+                    // }
 
                     return null;
                   },
@@ -127,11 +133,35 @@ class _LoginContentState extends State<LoginContent> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 20 / 844,
                 ),
-                LoginButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, '/bottomNavBar');
+                BlocBuilder<LoginRequestCubit, LoginRequestState>(
+                  builder: (context, state) {
+                    if (state.isLoading) {
+                      return const CircularProgressIndicator.adaptive(
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Color(0xFFFFFFFF)),
+                      );
+                    } else if (state.hasError) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        showAdaptiveDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (_) => const ErrorDialog(),
+                        );
+                      });
+                    } else if (state.hasData) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          '/bottomNavBar',
+                          (route) => false,
+                        );
+                      });
                     }
+                    return LoginButton(
+                      onPressed: () {
+                        context.read<LoginRequestCubit>().login();
+                      },
+                    );
                   },
                 ),
               ],
@@ -156,5 +186,15 @@ class _LoginContentState extends State<LoginContent> {
         ],
       ),
     );
+  }
+
+  bool validateAndSave() {
+    final form = context.read<LoginRequestCubit>().formKey.currentState;
+    if (form!.validate()) {
+      form.save();
+      return true;
+    } else {
+      return false;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import 'package:al_asas/data/repository/get_courses_repo.dart';
+import 'package:al_asas/data/repositories/get_courses_repo.dart';
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';
@@ -15,10 +15,7 @@ class ToFinalExamButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: ElevatedButton(
-          onPressed: () async {
-            var response = await GetCoursesRepo().getCourses();
-            print(response?.status);
-          },
+          onPressed: () {},
           style: ElevatedButton.styleFrom(
             foregroundColor: const Color(0xFFFFFFFF),
             backgroundColor: const Color(0xFF2A3E34),

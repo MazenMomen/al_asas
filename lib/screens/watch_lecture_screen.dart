@@ -2,61 +2,104 @@ import 'package:al_asas/utils/app_styles.dart';
 import 'package:al_asas/widgets/access_lecture_and_quiz.dart';
 import 'package:al_asas/widgets/lecture_video.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
-import '../generated/l10n.dart';
-import '../widgets/lecture_tabs.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../data/cubits/youtube_player_cubit/youtube_player_cubit.dart';
+import '../data/models/get_courses_model.dart';
 import '../widgets/to_final_exam_button.dart';
 
 class WatchLectureScreen extends StatelessWidget {
-  const WatchLectureScreen({super.key});
+  final List<LectureStats> lectureStats;
+
+  const WatchLectureScreen({
+    super.key,
+    required this.lectureStats,
+  });
 
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(
-        builder: (BuildContext context, Orientation orientation) {
-      if (orientation == Orientation.landscape) {
-        return const Scaffold(
-          body: FittedBox(fit: BoxFit.fitHeight, child: LectureVideo()),
-        );
-      } else {
-        return PopScope(
-          canPop: false,
-          onPopInvoked: (didPop) {
-            Navigator.pushNamed(context, '/bottomNavBar');
-          },
-          child: Scaffold(
-            backgroundColor: const Color(0xFFFFFFFF),
-            body: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const LectureVideo(),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 80 / 844,
-                    child: const Center(
-                      child: Text(
-                        "التفسير | المحاضرة الأولى",
-                        style: AppStyles.black14,
+      builder: (BuildContext context, Orientation orientation) {
+        if (orientation == Orientation.landscape) {
+          return Scaffold(
+            body: FittedBox(
+              fit: BoxFit.fill,
+              child: BlocBuilder<YoutubePlayerCubit, YoutubePlayerState>(
+                builder: (context, state) {
+                  String videoUrl =
+                      lectureStats[0].lecture.videoLink; // Default video
+                  if (state is YoutubePlayerUpdated) {
+                    videoUrl = state.videoUrl;
+                  }
+                  return LectureVideo(videoURL: videoUrl);
+                },
+              ),
+            ),
+          );
+        } else {
+          return PopScope(
+            canPop: false,
+            onPopInvoked: (didPop) {
+              Navigator.pushNamed(context, '/bottomNavBar');
+            },
+            child: Scaffold(
+              backgroundColor: const Color(0xFFFFFFFF),
+              body: SafeArea(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    BlocBuilder<YoutubePlayerCubit, YoutubePlayerState>(
+                      builder: (context, state) {
+                        String videoUrl =
+                            lectureStats[0].lecture.videoLink; // Default video
+                        if (state is YoutubePlayerUpdated) {
+                          videoUrl = state.videoUrl;
+                        }
+                        return LectureVideo(videoURL: videoUrl);
+                      },
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 80 / 844,
+                      child: Center(
+                        child: Text(
+                          lectureStats[0].lecture.name,
+                          style: AppStyles.black14,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
-                  ),
-                  // LectureTabs(),
-                  const Divider(
-                    color: Color(0xFF67727E),
-                    height: 1,
-                  ),
-                  Expanded(
-                    child: ListView.separated(
+                    const Divider(
+                      color: Color(0xFF67727E),
+                      height: 1,
+                    ),
+                    Expanded(
+                      child: ListView.separated(
                         itemBuilder: (context, index) {
-                          return const Column(
+                          return Column(
                             children: [
-                              AccessLectureAndQuiz(),
-                              Divider(
+                              GestureDetector(
+                                onTap: () {
+                                  final videoUrl =
+                                      lectureStats[index].lecture.videoLink;
+                                  context
+                                      .read<YoutubePlayerCubit>()
+                                      .updateVideoUrl(videoUrl);
+                                },
+                                child: AccessLectureAndQuiz(
+                                  titles: lectureStats[index].lecture.name,
+                                ),
+                              ),
+                              const Divider(
                                 color: Color(0xFF67727E),
                                 height: 1,
                               ),
-                              AccessLectureAndQuiz(),
+                              GestureDetector(
+                                child: AccessLectureAndQuiz(
+                                  titles: "الاختبار ${index + 1}",
+                                ),
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/mcqExam');
+                                },
+                              ),
                             ],
                           );
                         },
@@ -66,20 +109,21 @@ class WatchLectureScreen extends StatelessWidget {
                             height: 1,
                           );
                         },
-                        itemCount: 10),
-                  ),
-                  const Divider(
-                    color: Color(0xff717171),
-                    height: 1,
-                  ),
-
-                  const ToFinalExamButton()
-                ],
+                        itemCount: lectureStats.length,
+                      ),
+                    ),
+                    const Divider(
+                      color: Color(0xff717171),
+                      height: 1,
+                    ),
+                    const ToFinalExamButton()
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      }
-    });
+          );
+        }
+      },
+    );
   }
 }

@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  api_cache_manager: ^1.0.2
   bloc: ^8.1.4
   cupertino_icons: ^1.0.6
   curved_navigation_bar: ^1.0.5
@@ -36,9 +37,9 @@ dependencies:
   flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.0
   flutter_svg: ^2.0.10+1
   http: ^1.2.1
-  shared_preferences: ^2.2.3
   youtube_player_flutter: ^9.0.1
 
 dev_dependencies:

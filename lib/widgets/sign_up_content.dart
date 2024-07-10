@@ -252,8 +252,12 @@ class _SignUpContentState extends State<SignUpContent> {
                 ),
                 SignUpButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, '/bottomNavBar');
+                    if (validateAndSave()) {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/bottomNavBar',
+                        (route) => false,
+                      );
                     }
                   },
                 ),
@@ -276,5 +280,15 @@ class _SignUpContentState extends State<SignUpContent> {
         ],
       ),
     );
+  }
+
+  bool validateAndSave() {
+    final form = _formKey.currentState;
+    if (form!.validate()) {
+      form.save();
+      return true;
+    } else {
+      return false;
+    }
   }
 }

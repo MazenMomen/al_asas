@@ -31,7 +31,7 @@ class ToSignUpTextButton extends StatelessWidget {
           ),
         ),
         TextSpan(
-          text: S.of(context).to_sign_up,
+          text: S.of(context).register_page,
           style: const TextStyle(
             color: Color(0xFFFFFFFF),
             fontSize: 14.30,

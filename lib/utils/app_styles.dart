@@ -125,4 +125,10 @@ abstract class AppStyles {
     fontFamily: 'Cairo',
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle semiBold22 = TextStyle(
+    color: Color(0xFFEC6368),
+    fontSize: 22,
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w600,
+  );
 }

@@ -45,6 +45,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Email address should be as follows:\n\'user@example.com\'"),
         "email_hint": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "email_subtitle": MessageLookupByLibrary.simpleMessage("Email"),
+        "error_dialog_button": MessageLookupByLibrary.simpleMessage("Back"),
+        "error_dialog_title":
+            MessageLookupByLibrary.simpleMessage("An Error Occurred!"),
         "exit_alert_dialog_content": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to exit the app?"),
         "exit_alert_dialog_title":
@@ -77,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lecture_tab3": MessageLookupByLibrary.simpleMessage("Tests Results"),
         "lecture_tab4": MessageLookupByLibrary.simpleMessage("Questions"),
         "library_button": MessageLookupByLibrary.simpleMessage("Library"),
+        "login_error":
+            MessageLookupByLibrary.simpleMessage("Incorrect email or password"),
         "login_page": MessageLookupByLibrary.simpleMessage("Login"),
         "logout_button": MessageLookupByLibrary.simpleMessage("Logout"),
         "mobile_number_empty": MessageLookupByLibrary.simpleMessage(
@@ -101,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_hint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "password_subtitle": MessageLookupByLibrary.simpleMessage("Password"),
+        "please_wait": MessageLookupByLibrary.simpleMessage("Please wait..."),
         "profile_button": MessageLookupByLibrary.simpleMessage("My Profile"),
         "profile_header":
             MessageLookupByLibrary.simpleMessage("Account Information"),
@@ -119,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("Al-Menbar"),
         "to_essay_exam": MessageLookupByLibrary.simpleMessage("Next"),
         "to_sign_in": MessageLookupByLibrary.simpleMessage("Login now"),
-        "to_sign_up": MessageLookupByLibrary.simpleMessage("Register now")
+        "to_sign_up": MessageLookupByLibrary.simpleMessage("Register now"),
+        "visit_website_for_acc_details": MessageLookupByLibrary.simpleMessage(
+            "To view, edit, or complete all account data, you can visit the website")
       };
 }

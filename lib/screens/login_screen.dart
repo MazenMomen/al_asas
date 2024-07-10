@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     LoginHeader(
-                      height: MediaQuery.of(context).size.height * 1 / 6,
+                      height: MediaQuery.of(context).size.height * 1 / 5,
                     ),
                     const LoginContent(),
                     LoginFooter(

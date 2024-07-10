@@ -2,19 +2,27 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter/material.dart';
 
 class LectureVideo extends StatefulWidget {
-  const LectureVideo({super.key});
+  final String videoURL;
+
+  const LectureVideo({
+    super.key,
+    required this.videoURL,
+  });
 
   @override
   State<LectureVideo> createState() => _LectureVideoState();
 }
 
 class _LectureVideoState extends State<LectureVideo> {
-  final videoURL = 'https://youtu.be/UOqZGK-1c_M?si=cE1chgJy-qqwhIN9';
-
   late YoutubePlayerController _controller;
 
   @override
   void initState() {
+    super.initState();
+    _initializeController(widget.videoURL);
+  }
+
+  void _initializeController(String videoURL) {
     final videoId = YoutubePlayer.convertUrlToId(videoURL);
     _controller = YoutubePlayerController(
       initialVideoId: videoId!,
@@ -22,40 +30,39 @@ class _LectureVideoState extends State<LectureVideo> {
         autoPlay: false,
         mute: false,
       ),
-    );
-    super.initState();
+    )..addListener(() {
+        if (_controller.value.isReady) {
+          setState(() {});
+        }
+      });
   }
 
   @override
-  Widget build(BuildContext context) {
-    return YoutubePlayerBuilder(
-      player: YoutubePlayer(
-        controller: _controller,
-        showVideoProgressIndicator: true,
-        progressIndicatorColor: const Color(0xFF2A3E34),
-        progressColors: const ProgressBarColors(
-          playedColor: Color(0xFF2A3E34),
-          handleColor: Color(0xFF2A3E34),
-        ),
-        topActions: const [],
-        bottomActions: [
-          CurrentPosition(),
-          ProgressBar(isExpanded: true),
-          RemainingDuration(),
-          const SizedBox(width: 8),
-          const PlaybackSpeedButton(),
-          FullScreenButton(),
-        ],
-      ),
-      builder: (context, player) {
-        return player;
-      },
-    );
+  void didUpdateWidget(covariant LectureVideo oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.videoURL != widget.videoURL) {
+      _controller.load(YoutubePlayer.convertUrlToId(widget.videoURL)!);
+    }
   }
 
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return YoutubePlayer(
+      controller: _controller,
+      showVideoProgressIndicator: true,
+      progressIndicatorColor: Colors.red,
+      onReady: () {
+        // Video player is ready
+      },
+      onEnded: (data) {
+        // Handle video end
+      },
+    );
   }
 }

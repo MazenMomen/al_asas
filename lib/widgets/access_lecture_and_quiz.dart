@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../utils/app_styles.dart';
 
 class AccessLectureAndQuiz extends StatelessWidget {
+  final String titles;
   const AccessLectureAndQuiz({
+    required this.titles,
     super.key,
   });
 
@@ -21,23 +23,12 @@ class AccessLectureAndQuiz extends StatelessWidget {
               color: Color(0xFF2A3E34),
             ),
           ),
-          RichText(
-            text: const TextSpan(style: AppStyles.extraBold10_31, children: [
-              TextSpan(
-                text: '',
-              ),
-              WidgetSpan(
-                  child: SizedBox(
-                width: 8,
-              )),
-              TextSpan(text: '|'),
-              WidgetSpan(
-                  child: SizedBox(
-                width: 8,
-              )),
-              TextSpan(text: ''),
-            ]),
-          )
+          Expanded(
+            child: Text(
+              titles,
+              style: AppStyles.extraBold10_31,
+            ),
+          ),
         ],
       ),
     );

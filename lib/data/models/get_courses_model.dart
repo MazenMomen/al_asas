@@ -1,159 +1,182 @@
 class GetCoursesModel {
-  String status;
-  Data data;
+  GetCoursesModel({
+    required this.status,
+    required this.data,
+  });
+  late final String status;
+  late final Data data;
 
-  GetCoursesModel({required this.status, required this.data});
+  GetCoursesModel.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    data = Data.fromJson(json['data']);
+  }
 
-  factory GetCoursesModel.fromJson(Map<String, dynamic> json) {
-    return GetCoursesModel(
-      status: json['status'],
-      data: Data.fromJson(json['data']),
-    );
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['status'] = status;
+    data_['data'] = data.toJson();
+    return data_;
   }
 }
 
 class Data {
-  List<CourseStat> courseStat;
+  Data({
+    required this.courseStat,
+  });
+  late final List<CourseStat> courseStat;
 
-  Data({required this.courseStat});
+  Data.fromJson(Map<String, dynamic> json) {
+    courseStat = List.from(json['courseStat'])
+        .map((e) => CourseStat.fromJson(e))
+        .toList();
+  }
 
-  factory Data.fromJson(Map<String, dynamic> json) {
-    return Data(
-      courseStat: List<CourseStat>.from(
-          json['courseStat'].map((x) => CourseStat.fromJson(x))),
-    );
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['courseStat'] = courseStat.map((e) => e.toJson()).toList();
+    return data_;
   }
 }
 
 class CourseStat {
-  String id;
-  List<dynamic> lectureQuizzesScores;
-  Course course;
-  String student;
-  int v;
-  List<LectureStat> lectureStats;
-  bool? passed;
-  int? totalLecturesScoreOutOf10;
-  int? totalScore;
-
   CourseStat({
-    required this.id,
     required this.lectureQuizzesScores,
     required this.course,
     required this.student,
-    required this.v,
     required this.lectureStats,
-    this.passed,
-    this.totalLecturesScoreOutOf10,
-    this.totalScore,
+    required this.id,
   });
+  late final List<dynamic> lectureQuizzesScores;
+  late final Course course;
+  late final String student;
+  late final List<LectureStats> lectureStats;
+  late final String id;
 
-  factory CourseStat.fromJson(Map<String, dynamic> json) {
-    return CourseStat(
-      id: json['id'],
-      lectureQuizzesScores:
-          List<dynamic>.from(json['lectureQuizzesScores'].map((x) => x)),
-      course: Course.fromJson(json['course']),
-      student: json['student'],
-      v: json['__v'],
-      lectureStats: List<LectureStat>.from(
-          json['lectureStats'].map((x) => LectureStat.fromJson(x))),
-      passed: json['passed'],
-      totalLecturesScoreOutOf10: json['totalLecturesScoreOutOf10'],
-      totalScore: json['totalScore'],
-    );
+  CourseStat.fromJson(Map<String, dynamic> json) {
+    lectureQuizzesScores =
+        List.castFrom<dynamic, dynamic>(json['lectureQuizzesScores']);
+    course = Course.fromJson(json['course']);
+    student = json['student'];
+    lectureStats = List.from(json['lectureStats'])
+        .map((e) => LectureStats.fromJson(e))
+        .toList();
+    id = json['id'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['lectureQuizzesScores'] = lectureQuizzesScores;
+    data_['course'] = course.toJson();
+    data_['student'] = student;
+    data_['lectureStats'] = lectureStats.map((e) => e.toJson()).toList();
+    data_['id'] = id;
+    return data_;
   }
 }
 
 class Course {
-  String id;
-  String text;
-  int level;
-  String description;
-  String subject;
-  List<dynamic> prerequisites;
-  int v;
-
   Course({
-    required this.id,
     required this.text,
     required this.level,
     required this.description,
     required this.subject,
     required this.prerequisites,
-    required this.v,
+    required this.id,
   });
+  late final String text;
+  late final int level;
+  late final String description;
+  late final String subject;
+  late final List<dynamic> prerequisites;
+  late final String id;
 
-  factory Course.fromJson(Map<String, dynamic> json) {
-    return Course(
-      id: json['id'],
-      text: json['text'],
-      level: json['level'],
-      description: json['description'],
-      subject: json['subject'],
-      prerequisites: List<dynamic>.from(json['prerequisites'].map((x) => x)),
-      v: json['__v'],
-    );
+  Course.fromJson(Map<String, dynamic> json) {
+    text = json['text'];
+    level = json['level'];
+    description = json['description'];
+    subject = json['subject'];
+    prerequisites = List.castFrom<dynamic, dynamic>(json['prerequisites']);
+    id = json['id'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['text'] = text;
+    data_['level'] = level;
+    data_['description'] = description;
+    data_['subject'] = subject;
+    data_['prerequisites'] = prerequisites;
+    data_['id'] = id;
+    return data_;
   }
 }
 
-class LectureStat {
-  String id;
-  Lecture lecture;
-  String student;
-  String courseStat;
-  bool done;
-  bool open;
-  int v;
-
-  LectureStat({
-    required this.id,
+class LectureStats {
+  LectureStats({
     required this.lecture,
     required this.student,
     required this.courseStat,
     required this.done,
     required this.open,
-    required this.v,
+    required this.id,
   });
+  late final Lecture lecture;
+  late final String student;
+  late final String courseStat;
+  late final bool done;
+  late final bool open;
+  late final String id;
 
-  factory LectureStat.fromJson(Map<String, dynamic> json) {
-    return LectureStat(
-      id: json['id'],
-      lecture: Lecture.fromJson(json['lecture']),
-      student: json['student'],
-      courseStat: json['courseStat'],
-      done: json['done'],
-      open: json['open'],
-      v: json['__v'],
-    );
+  LectureStats.fromJson(Map<String, dynamic> json) {
+    lecture = Lecture.fromJson(json['lecture']);
+    student = json['student'];
+    courseStat = json['courseStat'];
+    done = json['done'];
+    open = json['open'];
+    id = json['id'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['lecture'] = lecture.toJson();
+    data_['student'] = student;
+    data_['courseStat'] = courseStat;
+    data_['done'] = done;
+    data_['open'] = open;
+    data_['id'] = id;
+    return data_;
   }
 }
 
 class Lecture {
-  String id;
-  String name;
-  int order;
-  String course;
-  String videoLink;
-  int v;
-
   Lecture({
-    required this.id,
     required this.name,
     required this.order,
     required this.course,
     required this.videoLink,
-    required this.v,
+    required this.id,
   });
+  late final String name;
+  late final int order;
+  late final String course;
+  late final String videoLink;
+  late final String id;
 
-  factory Lecture.fromJson(Map<String, dynamic> json) {
-    return Lecture(
-      id: json['id'],
-      name: json['name'],
-      order: json['order'],
-      course: json['course'],
-      videoLink: json['videoLink'],
-      v: json['__v'],
-    );
+  Lecture.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    order = json['order'];
+    course = json['course'];
+    videoLink = json['videoLink'];
+    id = json['id'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final data_ = <String, dynamic>{};
+    data_['name'] = name;
+    data_['order'] = order;
+    data_['course'] = course;
+    data_['videoLink'] = videoLink;
+    data_['id'] = id;
+    return data_;
   }
 }

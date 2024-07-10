@@ -679,6 +679,56 @@ class S {
       args: [],
     );
   }
+
+  /// `To view, edit, or complete all account data, you can visit the website`
+  String get visit_website_for_acc_details {
+    return Intl.message(
+      'To view, edit, or complete all account data, you can visit the website',
+      name: 'visit_website_for_acc_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect email or password`
+  String get login_error {
+    return Intl.message(
+      'Incorrect email or password',
+      name: 'login_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An Error Occurred!`
+  String get error_dialog_title {
+    return Intl.message(
+      'An Error Occurred!',
+      name: 'error_dialog_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get error_dialog_button {
+    return Intl.message(
+      'Back',
+      name: 'error_dialog_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait...`
+  String get please_wait {
+    return Intl.message(
+      'Please wait...',
+      name: 'please_wait',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

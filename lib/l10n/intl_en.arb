@@ -61,5 +61,10 @@
     "mobile_number_empty": "Please enter your mobile number!!",
     "final_exam": "Enter the final exam",
     "profile_header": "Account Information",
-    "logout_button": "Logout"
+    "logout_button": "Logout",
+    "visit_website_for_acc_details": "To view, edit, or complete all account data, you can visit the website",
+    "login_error": "Incorrect email or password",
+    "error_dialog_title": "An Error Occurred!",
+    "error_dialog_button": "Back",
+    "please_wait": "Please wait..."
 }
