@@ -72,51 +72,56 @@ class WatchLectureScreen extends StatelessWidget {
                       height: 1,
                     ),
                     Expanded(
-                      child: ListView.separated(
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  final videoUrl =
-                                      lectureStats[index].lecture.videoLink;
-                                  context
-                                      .read<YoutubePlayerCubit>()
-                                      .updateVideoUrl(videoUrl);
-                                },
-                                child: AccessLectureAndQuiz(
-                                  titles: lectureStats[index].lecture.name,
+                        child: CustomScrollView(
+                      slivers: [
+                        SliverList.separated(
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    final videoUrl =
+                                        lectureStats[index].lecture.videoLink;
+                                    context
+                                        .read<YoutubePlayerCubit>()
+                                        .updateVideoUrl(videoUrl);
+                                  },
+                                  child: AccessLectureAndQuiz(
+                                    title: lectureStats[index].lecture.name,
+                                  ),
                                 ),
-                              ),
-                              const Divider(
-                                color: Color(0xFF67727E),
-                                height: 1,
-                              ),
-                              GestureDetector(
-                                child: AccessLectureAndQuiz(
-                                  titles: "الاختبار ${index + 1}",
+                                const Divider(
+                                  color: Color(0xFF67727E),
+                                  height: 1,
                                 ),
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/mcqExam');
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                        separatorBuilder: (context, index) {
-                          return const Divider(
-                            color: Color(0xFF67727E),
+                                GestureDetector(
+                                  child: AccessLectureAndQuiz(
+                                    title: "الاختبار ${index + 1}",
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/mcqExam');
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return const Divider(
+                              color: Color(0xFF67727E),
+                              height: 1,
+                            );
+                          },
+                          itemCount: lectureStats.length,
+                        ),
+                        const SliverToBoxAdapter(
+                          child: Divider(
+                            color: Color(0xff717171),
                             height: 1,
-                          );
-                        },
-                        itemCount: lectureStats.length,
-                      ),
-                    ),
-                    const Divider(
-                      color: Color(0xff717171),
-                      height: 1,
-                    ),
-                    const ToFinalExamButton()
+                          ),
+                        ),
+                        const ToFinalExamButton()
+                      ],
+                    )),
                   ],
                 ),
               ),

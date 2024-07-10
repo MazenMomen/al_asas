@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../utils/app_styles.dart';
 
 class AccessLectureAndQuiz extends StatelessWidget {
-  final String titles;
+  final String title;
   const AccessLectureAndQuiz({
-    required this.titles,
+    required this.title,
     super.key,
   });
 
@@ -25,7 +25,7 @@ class AccessLectureAndQuiz extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              titles,
+              title,
               style: AppStyles.extraBold10_31,
             ),
           ),
