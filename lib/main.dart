@@ -12,14 +12,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'data/cubits/register_cubit/register_cubit.dart';
+import 'data/cubits/user_data_cubit/user_data_cubit.dart';
 import 'data/repositories/get_courses_repo.dart';
 import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  bool result = await SharedService.isLoggedIn();
-  Widget defaultHome = result ? const BottomNavBar() : const LoginScreen();
+  bool isLoggedIn = await SharedService.isLoggedIn();
+  bool isRegistered = await SharedService.isRegistered();
+  Widget defaultHome =
+      isLoggedIn || isRegistered ? const BottomNavBar() : const LoginScreen();
 
   runApp(MyApp(defaultHome: defaultHome));
 }
@@ -51,6 +55,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<YoutubePlayerCubit>(
           create: (context) => YoutubePlayerCubit(),
+        ),
+        BlocProvider<RegisterCubit>(
+          create: (context) => RegisterCubit(),
+        ),
+        BlocProvider<UserDataCubit>(
+          create: (context) => UserDataCubit(),
         ),
       ],
       child: MaterialApp(

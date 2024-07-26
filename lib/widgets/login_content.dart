@@ -145,7 +145,9 @@ class _LoginContentState extends State<LoginContent> {
                         showAdaptiveDialog(
                           barrierDismissible: false,
                           context: context,
-                          builder: (_) => const ErrorDialog(),
+                          builder: (_) => ErrorDialog(
+                            message: S.of(context).login_error,
+                          ),
                         );
                       });
                     } else if (state.hasData) {
@@ -180,21 +182,11 @@ class _LoginContentState extends State<LoginContent> {
           ),
           ToSignUpTextButton(
             onTap: () {
-              Navigator.pushNamed(context, '/signUp');
+              Navigator.pushReplacementNamed(context, '/signUp');
             },
           ),
         ],
       ),
     );
-  }
-
-  bool validateAndSave() {
-    final form = context.read<LoginRequestCubit>().formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    } else {
-      return false;
-    }
   }
 }

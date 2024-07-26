@@ -2,8 +2,11 @@ import 'package:al_asas/widgets/sign_up_button.dart';
 import 'package:al_asas/widgets/to_login_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:al_asas/data/cubits/register_cubit/register_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../generated/l10n.dart';
 import '../utils/app_styles.dart';
+import 'error_dialog.dart';
 import 'login_sign_up_field.dart';
 import 'google_login_button.dart';
 import 'text_in_divider.dart';
@@ -20,17 +23,6 @@ class SignUpContent extends StatefulWidget {
 class _SignUpContentState extends State<SignUpContent> {
   bool isObscureText = true;
   bool isObscureConfirmation = true;
-
-  final _formKey = GlobalKey<FormState>();
-  final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
-
-  @override
-  void dispose() {
-    _passwordController.dispose();
-    _confirmPasswordController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +53,7 @@ class _SignUpContentState extends State<SignUpContent> {
             height: MediaQuery.of(context).size.height * 15 / 844,
           ),
           Form(
-            key: _formKey,
+            key: context.read<RegisterCubit>().formKey,
             child: Column(
               children: [
                 Align(
@@ -70,6 +62,7 @@ class _SignUpContentState extends State<SignUpContent> {
                       style: AppStyles.regular13_5),
                 ),
                 LoginSignUpField(
+                  controller: context.read<RegisterCubit>().emailController,
                   validator: (val) {
                     if (val!.isEmpty) {
                       return S.of(context).email_empty;
@@ -97,9 +90,11 @@ class _SignUpContentState extends State<SignUpContent> {
                               style: AppStyles.regular13_5),
                         ),
                         LoginSignUpField(
+                          controller:
+                              context.read<RegisterCubit>().firstNameController,
                           inputFormatters: <TextInputFormatter>[
                             FilteringTextInputFormatter.allow(
-                              RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
+                              RegExp(r"^[a-zA-Z\u0600-\u06FF]+$"),
                             ),
                           ],
                           validator: (val) {
@@ -126,9 +121,11 @@ class _SignUpContentState extends State<SignUpContent> {
                               style: AppStyles.regular13_5),
                         ),
                         LoginSignUpField(
+                          controller:
+                              context.read<RegisterCubit>().lastNameController,
                           inputFormatters: <TextInputFormatter>[
                             FilteringTextInputFormatter.allow(
-                              RegExp(r"[a-zA-Z\u0600-\u06FF]+"),
+                              RegExp(r"^[a-zA-Z\u0600-\u06FF]+$"),
                             ),
                           ],
                           validator: (val) {
@@ -158,7 +155,7 @@ class _SignUpContentState extends State<SignUpContent> {
                       style: AppStyles.regular13_5),
                 ),
                 LoginSignUpField(
-                  controller: _passwordController,
+                  controller: context.read<RegisterCubit>().passwordController,
                   validator: (val) {
                     if (val!.isEmpty) {
                       return S.of(context).password_empty;
@@ -194,17 +191,18 @@ class _SignUpContentState extends State<SignUpContent> {
                       style: AppStyles.regular13_5),
                 ),
                 LoginSignUpField(
-                  controller: _confirmPasswordController,
+                  controller:
+                      context.read<RegisterCubit>().confirmPasswordController,
                   validator: (val) {
                     if (val == null || val.isEmpty) {
                       return S.of(context).confirm_password_empty;
                     }
-                    if (val != _passwordController.text) {
+                    if (val !=
+                        context.read<RegisterCubit>().passwordController.text) {
                       return S.of(context).confirm_password_error;
                     }
                     return null;
                   },
-                  // height: MediaQuery.of(context).size.height * 27 / 844,
                   hintText: S.of(context).confirm_password_hint,
                   prefixIcon: const Icon(Icons.security,
                       color: Color(0xFF717171), size: 16),
@@ -250,15 +248,38 @@ class _SignUpContentState extends State<SignUpContent> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 10 / 844,
                 ),
-                SignUpButton(
-                  onPressed: () {
-                    if (validateAndSave()) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        '/bottomNavBar',
-                        (route) => false,
+                BlocBuilder<RegisterCubit, RegisterState>(
+                  builder: (context, state) {
+                    if (state is RegisterLoading) {
+                      return const Center(
+                        child: CircularProgressIndicator.adaptive(
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Color(0xFFFFFFFF)),
+                        ),
                       );
+                    } else if (state is RegisterSuccess) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          '/bottomNavBar',
+                          (route) => false,
+                        );
+                      });
+                    } else if (state is RegisterError) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        showAdaptiveDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (_) => ErrorDialog(
+                            message: state.message,
+                          ),
+                        );
+                      });
                     }
+
+                    return SignUpButton(onPressed: () {
+                      context.read<RegisterCubit>().register();
+                    });
                   },
                 ),
               ],
@@ -274,21 +295,11 @@ class _SignUpContentState extends State<SignUpContent> {
           ),
           ToLoginTextButton(
             onTap: () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushReplacementNamed(context, '/login');
             },
           ),
         ],
       ),
     );
-  }
-
-  bool validateAndSave() {
-    final form = _formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    } else {
-      return false;
-    }
   }
 }

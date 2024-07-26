@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
 
 class ErrorDialog extends StatelessWidget {
+  final String message;
   const ErrorDialog({
+    required this.message,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog.adaptive(
+      backgroundColor: const Color(0xFFFFFFFF),
       title: const Center(
         child: Icon(
           Icons.warning,
@@ -19,7 +22,7 @@ class ErrorDialog extends StatelessWidget {
         ),
       ),
       content: Text(
-        S.of(context).error_dialog_title,
+        message,
         style: AppStyles.semiBold22,
         textAlign: TextAlign.center,
       ),

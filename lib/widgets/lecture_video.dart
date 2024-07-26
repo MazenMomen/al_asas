@@ -1,3 +1,4 @@
+import 'package:al_asas/utils/app_styles.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -53,15 +54,37 @@ class _LectureVideoState extends State<LectureVideo> {
 
   @override
   Widget build(BuildContext context) {
-    return YoutubePlayer(
-      controller: _controller,
-      showVideoProgressIndicator: true,
-      progressIndicatorColor: Colors.red,
-      onReady: () {
-        // Video player is ready
-      },
-      onEnded: (data) {
-        // Handle video end
+    return YoutubePlayerBuilder(
+      player: YoutubePlayer(
+        controller: _controller,
+        showVideoProgressIndicator: true,
+        progressColors: const ProgressBarColors(
+          playedColor: Color(0xFFFFFFFF),
+          handleColor: Color(0xFF2A3E34),
+        ),
+        progressIndicatorColor: const Color(0xFF2A3E34),
+        topActions: [
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              _controller.metadata.title,
+              style: AppStyles.black16,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+        ],
+        bottomActions: [
+          CurrentPosition(),
+          ProgressBar(isExpanded: true),
+          RemainingDuration(),
+          const SizedBox(width: 8),
+          const PlaybackSpeedButton(),
+          FullScreenButton(),
+        ],
+      ),
+      builder: (context, player) {
+        return player;
       },
     );
   }

@@ -11,6 +11,7 @@ class LoadingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog.adaptive(
+      backgroundColor: const Color(0xFFFFFFFF),
       title: const Center(
         child: CircularProgressIndicator(
           color: Color(0xFF2A3E34),

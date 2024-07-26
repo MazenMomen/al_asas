@@ -33,4 +33,11 @@ class LoginRequestCubit extends Cubit<LoginRequestState> {
       }
     }
   }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    passwordController.dispose();
+    return super.close();
+  }
 }

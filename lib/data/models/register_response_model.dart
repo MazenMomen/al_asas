@@ -4,140 +4,147 @@ RegisterResponseModel registerResponseModel(String str) =>
     RegisterResponseModel.fromJson(json.decode(str));
 
 class RegisterResponseModel {
+  final String status;
+  final String token;
+  final UserData data;
+
   RegisterResponseModel({
     required this.status,
     required this.token,
     required this.data,
   });
-  late final String status;
-  late final String token;
-  late final Data data;
 
-  RegisterResponseModel.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    token = json['token'];
-    data = Data.fromJson(json['data']);
+  factory RegisterResponseModel.fromJson(Map<String, dynamic> json) {
+    return RegisterResponseModel(
+      status: json['status'] ?? '',
+      token: json['token'] ?? '',
+      data: UserData.fromJson(json['data'] ?? {}),
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final data_ = <String, dynamic>{};
-    data_['status'] = status;
-    data_['token'] = token;
-    data_['data'] = data.toJson();
-    return data_;
+    return {
+      'status': status,
+      'token': token,
+      'data': data.toJson(),
+    };
   }
 }
 
-class Data {
-  Data({
+class UserData {
+  final String firstName;
+  final String? middleName;
+  final String lastName;
+  final String email;
+  final String? photo;
+  final String? role;
+  final bool? active;
+  final String? country;
+  final String? city;
+  final String? createdAt;
+  final String? birthDate;
+  final bool? isSingle;
+  final bool? confirmed;
+  final Phone? phone;
+  final String? level;
+  final String? lastCertificate;
+  final String? educationLevel;
+  final String? currentJob;
+  final String? id;
+  UserData({
     required this.firstName,
-    required this.middleName,
+    this.middleName,
     required this.lastName,
     required this.email,
-    required this.photo,
-    required this.role,
-    required this.active,
-    required this.country,
-    required this.city,
-    required this.createdAt,
-    required this.birthDate,
-    required this.isSingle,
-    required this.confirmed,
-    required this.phone,
-    required this.level,
-    required this.lastCertificate,
-    required this.educationLevel,
-    required this.currentJob,
-    required this.id,
+    this.photo,
+    this.role,
+    this.active,
+    this.country,
+    this.city,
+    this.createdAt,
+    this.birthDate,
+    this.isSingle,
+    this.confirmed,
+    this.phone,
+    this.level,
+    this.lastCertificate,
+    this.educationLevel,
+    this.currentJob,
+    this.id,
   });
-  late final String firstName;
-  late final String middleName;
-  late final String lastName;
-  late final String email;
-  late final String photo;
-  late final String role;
-  late final bool active;
-  late final String country;
-  late final String city;
-  late final String createdAt;
-  late final String birthDate;
-  late final bool isSingle;
-  late final bool confirmed;
-  late final Phone phone;
-  late final String level;
-  late final String lastCertificate;
-  late final String educationLevel;
-  late final String currentJob;
-  late final String id;
 
-  Data.fromJson(Map<String, dynamic> json) {
-    firstName = json['Fname'];
-    middleName = json['Mname'];
-    lastName = json['Lname'];
-    email = json['email'];
-    photo = json['photo'];
-    role = json['role'];
-    active = json['active'];
-    country = json['country'];
-    city = json['city'];
-    createdAt = json['createdAt'];
-    birthDate = json['birthDate'];
-    isSingle = json['isSingle'];
-    confirmed = json['confirmed'];
-    phone = Phone.fromJson(json['phone']);
-    level = json['level'];
-    lastCertificate = json['lastCertificate'];
-    educationLevel = json['educationLevel'];
-    currentJob = json['currentJob'];
-    id = json['id'];
+  factory UserData.fromJson(Map<String, dynamic> json) {
+    return UserData(
+      firstName: json['Fname'] ?? '',
+      lastName: json['Lname'] ?? '',
+      email: json['email'] ?? '',
+      role: json['role'] ?? '',
+      active: json['active'] ?? false,
+      createdAt: json['createdAt'] ?? '',
+      isSingle: json['isSingle'] ?? false,
+      confirmed: json['confirmed'] ?? false,
+      level: json['level'] ?? '',
+      id: json['id'] ?? '',
+      middleName: '',
+      photo: '',
+      country: '',
+      city: '',
+      birthDate: '',
+      phone: Phone(countryCode: '', number: '', id: ''),
+      lastCertificate: '',
+      educationLevel: '',
+      currentJob: '',
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final data_ = <String, dynamic>{};
-    data_['Fname'] = firstName;
-    data_['Mname'] = middleName;
-    data_['Lname'] = lastName;
-    data_['email'] = email;
-    data_['photo'] = photo;
-    data_['role'] = role;
-    data_['active'] = active;
-    data_['country'] = country;
-    data_['city'] = city;
-    data_['createdAt'] = createdAt;
-    data_['birthDate'] = birthDate;
-    data_['isSingle'] = isSingle;
-    data_['confirmed'] = confirmed;
-    data_['phone'] = phone.toJson();
-    data_['level'] = level;
-    data_['lastCertificate'] = lastCertificate;
-    data_['educationLevel'] = educationLevel;
-    data_['currentJob'] = currentJob;
-    data_['id'] = id;
-    return data_;
+    return {
+      'Fname': firstName,
+      'Mname': middleName,
+      'Lname': lastName,
+      'email': email,
+      'photo': photo,
+      'role': role,
+      'active': active,
+      'country': country,
+      'city': city,
+      'createdAt': createdAt,
+      'birthDate': birthDate,
+      'isSingle': isSingle,
+      'confirmed': confirmed,
+      'phone': phone?.toJson(),
+      'level': level,
+      'lastCertificate': lastCertificate,
+      'educationLevel': educationLevel,
+      'currentJob': currentJob,
+      'id': id,
+    };
   }
 }
 
 class Phone {
+  final String countryCode;
+  final String number;
+  final String id;
   Phone({
     required this.countryCode,
     required this.number,
     required this.id,
   });
-  late final String countryCode;
-  late final String number;
-  late final String id;
 
-  Phone.fromJson(Map<String, dynamic> json) {
-    countryCode = json['countryCode'];
-    number = json['number'];
-    id = json['id'];
+  factory Phone.fromJson(Map<String, dynamic> json) {
+    return Phone(
+      countryCode: json['countryCode'] ?? '',
+      number: json['number'] ?? '',
+      id: json['id'] ?? '',
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final data_ = <String, dynamic>{};
-    data_['countryCode'] = countryCode;
-    data_['number'] = number;
-    data_['id'] = id;
-    return data_;
+    return {
+      'countryCode': countryCode,
+      'number': number,
+      'id': id,
+    };
   }
 }

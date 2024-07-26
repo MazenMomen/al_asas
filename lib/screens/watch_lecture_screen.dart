@@ -21,17 +21,18 @@ class WatchLectureScreen extends StatelessWidget {
       builder: (BuildContext context, Orientation orientation) {
         if (orientation == Orientation.landscape) {
           return Scaffold(
-            body: FittedBox(
-              fit: BoxFit.fill,
-              child: BlocBuilder<YoutubePlayerCubit, YoutubePlayerState>(
-                builder: (context, state) {
-                  String videoUrl =
-                      lectureStats[0].lecture.videoLink; // Default video
-                  if (state is YoutubePlayerUpdated) {
-                    videoUrl = state.videoUrl;
-                  }
-                  return LectureVideo(videoURL: videoUrl);
-                },
+            body: Center(
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: BlocBuilder<YoutubePlayerCubit, YoutubePlayerState>(
+                  builder: (context, state) {
+                    String videoUrl = lectureStats[0].lecture.videoLink;
+                    if (state is YoutubePlayerUpdated) {
+                      videoUrl = state.videoUrl;
+                    }
+                    return LectureVideo(videoURL: videoUrl);
+                  },
+                ),
               ),
             ),
           );
@@ -49,8 +50,7 @@ class WatchLectureScreen extends StatelessWidget {
                   children: [
                     BlocBuilder<YoutubePlayerCubit, YoutubePlayerState>(
                       builder: (context, state) {
-                        String videoUrl =
-                            lectureStats[0].lecture.videoLink; // Default video
+                        String videoUrl = lectureStats[0].lecture.videoLink;
                         if (state is YoutubePlayerUpdated) {
                           videoUrl = state.videoUrl;
                         }
@@ -60,15 +60,19 @@ class WatchLectureScreen extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 80 / 844,
                       child: Center(
-                        child: Text(
-                          lectureStats[0].lecture.name,
-                          style: AppStyles.black14,
-                          textAlign: TextAlign.center,
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.symmetric(
+                              horizontal: 8),
+                          child: Text(
+                            lectureStats[4].lecture.name,
+                            style: AppStyles.black14,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     ),
                     const Divider(
-                      color: Color(0xFF67727E),
+                      color: Color(0xFF2A3E34),
                       height: 1,
                     ),
                     Expanded(
@@ -91,7 +95,7 @@ class WatchLectureScreen extends StatelessWidget {
                                   ),
                                 ),
                                 const Divider(
-                                  color: Color(0xFF67727E),
+                                  color: Color(0xFF2A3E34),
                                   height: 1,
                                 ),
                                 GestureDetector(
@@ -107,7 +111,7 @@ class WatchLectureScreen extends StatelessWidget {
                           },
                           separatorBuilder: (context, index) {
                             return const Divider(
-                              color: Color(0xFF67727E),
+                              color: Color(0xFF2A3E34),
                               height: 1,
                             );
                           },
@@ -115,7 +119,7 @@ class WatchLectureScreen extends StatelessWidget {
                         ),
                         const SliverToBoxAdapter(
                           child: Divider(
-                            color: Color(0xff717171),
+                            color: Color(0xFF2A3E34),
                             height: 1,
                           ),
                         ),

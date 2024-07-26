@@ -53,7 +53,9 @@ class LearnScreen extends StatelessWidget {
                 showAdaptiveDialog(
                   barrierDismissible: false,
                   context: context,
-                  builder: (_) => const ErrorDialog(),
+                  builder: (_) => ErrorDialog(
+                    message: S.of(context).error_dialog_title,
+                  ),
                 );
               } else if (state is GetCoursesSuccess) {
                 Navigator.of(context).pop(); // Dismiss the loading dialog
