@@ -34,7 +34,7 @@ class LearnGridCard extends StatelessWidget {
           ),
           shadows: const [
             BoxShadow(
-              color: Color(0x3F000000),
+              color: Color(0xFF000000),
               blurRadius: 15.04,
               offset: Offset(0, 0),
               spreadRadius: 7.27,

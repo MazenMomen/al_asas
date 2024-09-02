@@ -46,7 +46,12 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons: ^0.13.1
+flutter_icons:
+  android: true
+  ios: true
+  adaptive_icon_background: "#ffffff"
+  image_path: "assets/images/Logo-Green.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
@@ -57,7 +62,7 @@ flutter:
     - family: DecoType Thuluth
 
       fonts:
-        - asset: assets/fonts/DTHULUTH.TTF
+        - asset: assets/fonts/DTHULUTH.ttf
 
     - family: DecoType Thuluth II
 

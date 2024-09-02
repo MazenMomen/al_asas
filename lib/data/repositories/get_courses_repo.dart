@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:al_asas/data/config.dart';
 import 'package:http/http.dart' as http;
 import 'package:al_asas/data/models/get_courses_model.dart';
 import '../../services/shared_service.dart';
@@ -15,7 +14,8 @@ class GetCoursesRepo {
       }
 
       var response = await http.get(
-        Uri.http(Config.apiURL, Config.coursesAPI),
+        Uri.parse(
+            'https://menbar-backend.onrender.com/api/v1/students/courses-stats'),
         headers: {
           'Authorization': 'Bearer $token',
         },
